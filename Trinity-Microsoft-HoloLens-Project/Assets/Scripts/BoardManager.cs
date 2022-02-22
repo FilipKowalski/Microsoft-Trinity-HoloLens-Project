@@ -9,11 +9,23 @@ public class BoardManager : MonoBehaviour
     private const float TILE_OFFSET = 0.04f;
 
     public List<GameObject> chessPiecePrefabs;
-    public List<GameObject> activeChessPieces;
+    public List<GameObject> activeChessPieces = new List<GameObject>();
 
     private void Update()
     {
         DrawChessboard();
+    }
+
+    private void Start()
+    {
+        SpawnChesspiece(0, Vector3.zero);
+    }
+
+    private void SpawnChesspiece(int index, Vector3 position)
+    {
+        GameObject go = Instantiate(chessPiecePrefabs[index], position, Quaternion.identity) as GameObject;
+        go.transform.SetParent(transform);
+        activeChessPieces.Add(go);
     }
 
     //temporary, later on we will use own assets
