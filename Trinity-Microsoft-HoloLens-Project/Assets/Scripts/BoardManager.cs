@@ -9,7 +9,7 @@ public class BoardManager : MonoBehaviour
     private const float TILE_OFFSET = 0.04f;
 
     public List<GameObject> chessPiecePrefabs;
-    public List<GameObject> activeChessPieces = new List<GameObject>();
+    public List<GameObject> activeChessPieces;
 
     private void Update()
     {
@@ -18,14 +18,51 @@ public class BoardManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnChesspiece(0, Vector3.zero);
+        SpawnAllChesspieces();
     }
+
+    private Vector3 GetTileCenter(int x, int z)
+    {
+        Vector3 tileCenter = Vector3.zero;
+        tileCenter.x += (TILE_SIZE * x) + TILE_OFFSET;
+        tileCenter.z += (TILE_SIZE * z) + TILE_OFFSET; 
+        return tileCenter;
+;    }
 
     private void SpawnChesspiece(int index, Vector3 position)
     {
         GameObject go = Instantiate(chessPiecePrefabs[index], position, Quaternion.identity) as GameObject;
         go.transform.SetParent(transform);
         activeChessPieces.Add(go);
+    }
+
+    private void SpawnAllChesspieces()
+    {
+        activeChessPieces = new List<GameObject>();
+
+        //spawn black chesspieces
+
+        //king
+        SpawnChesspiece(0, GetTileCenter(3, 0));
+
+        //Queen
+        SpawnChesspiece(1, GetTileCenter(4, 0));
+
+        //Rooks
+        SpawnChesspiece(2, GetTileCenter(0, 0));
+        SpawnChesspiece(2, GetTileCenter(7, 0));
+
+        //Bishops
+        SpawnChesspiece(3, GetTileCenter(2, 0));
+        SpawnChesspiece(3, GetTileCenter(5, 0));
+
+        //Knights
+        SpawnChesspiece(4, GetTileCenter(1, 0));
+        SpawnChesspiece(4, GetTileCenter(6, 0));
+
+        //Pawns
+        for (int i = 0; i < 8; i++)
+            SpawnChesspiece(5, GetTileCenter(i, 1));
     }
 
     //temporary, later on we will use own assets
