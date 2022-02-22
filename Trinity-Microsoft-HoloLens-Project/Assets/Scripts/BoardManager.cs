@@ -63,9 +63,34 @@ public class BoardManager : MonoBehaviour
         //Pawns
         for (int i = 0; i < 8; i++)
             SpawnChesspiece(5, GetTileCenter(i, 1));
+
+        //spawn White chesspieces
+
+        //king
+        SpawnChesspiece(6, GetTileCenter(3, 7));
+
+        //Queen
+        SpawnChesspiece(7, GetTileCenter(4, 7));
+
+        //Rooks
+        SpawnChesspiece(8, GetTileCenter(0, 7));
+        SpawnChesspiece(8, GetTileCenter(7, 7));
+
+        //Bishops
+        SpawnChesspiece(9, GetTileCenter(2, 7));
+        SpawnChesspiece(9, GetTileCenter(5, 7));
+
+        //Knights
+        SpawnChesspiece(10, GetTileCenter(1, 7));
+        SpawnChesspiece(10, GetTileCenter(6, 7));
+
+        //Pawns
+        for (int i = 0; i < 8; i++)
+            SpawnChesspiece(11, GetTileCenter(i, 6));
     }
 
     //temporary, later on we will use own assets
+    //enable gizmos in editor to see
     private void DrawChessboard()
     {
         // Vector3.right is a unit vector so we multiply by TileSize and by 8 to obtain a vector the is the length of the board
