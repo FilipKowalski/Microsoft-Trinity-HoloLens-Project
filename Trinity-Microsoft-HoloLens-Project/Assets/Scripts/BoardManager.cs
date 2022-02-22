@@ -8,6 +8,9 @@ public class BoardManager : MonoBehaviour
     private const float TILE_SIZE = 0.08f;
     private const float TILE_OFFSET = 0.04f;
 
+    public List<GameObject> chessPiecePrefabs;
+    public List<GameObject> activeChessPieces;
+
     private void Update()
     {
         DrawChessboard();
@@ -20,13 +23,14 @@ public class BoardManager : MonoBehaviour
         Vector3 widthLine = (Vector3.right * TILE_SIZE) * 8;
         Vector3 lengthLine = (Vector3.forward * TILE_SIZE) * 8;
 
-        for (int i = 0; i <= 8; i ++)
+        for (float i = 0; i <= TILE_SIZE * 8; i += TILE_SIZE)
         {
             Vector3 start = Vector3.forward * i;
             Debug.DrawLine(start, start + widthLine);
-            for (int j = 0; j <= 8; j++)
+            for (float j = 0; j <= TILE_SIZE * 8; j += TILE_SIZE)
             {
-
+                start = Vector3.right * j;
+                Debug.DrawLine(start, start + lengthLine);
             }
         }
     }
