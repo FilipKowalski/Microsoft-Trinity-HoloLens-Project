@@ -34,18 +34,6 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         SpawnAllChesspieces();
-        //inspect the chessboard
-        string debug = "Hello";
-        for (int i = 0; i < 8; i++)
-        {
-            debug += "\n {";
-            for (int j = 0; j < 8; j++)
-            {
-                debug += (" " + chessPiecesBoard[i, j] + " ");
-            }
-            debug += "}";
-        }
-        Debug.Log(debug);
     }
 
     private Vector3 GetTileCenter(int x, int z)
@@ -67,6 +55,13 @@ public class BoardManager : MonoBehaviour
     {
         activeChessPieces = new List<GameObject>();
         chessPiecesBoard = new int[8,8];
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                chessPiecesBoard[i,j] = -1;
+            }
+        }
 
         //spawn black chesspieces
 
