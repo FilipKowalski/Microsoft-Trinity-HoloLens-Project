@@ -35,14 +35,17 @@ public class BoardManager : MonoBehaviour
     {
         SpawnAllChesspieces();
         //inspect the chessboard
+        string debug = "Hello";
         for (int i = 0; i < 8; i++)
         {
-            Console.WriteLine("\n");
+            debug += "\n {";
             for (int j = 0; j < 8; j++)
             {
-                Console.WriteLine(chessPiecesBoard[i, j]);
+                debug += (" " + chessPiecesBoard[i, j] + " ");
             }
+            debug += "}";
         }
+        Debug.Log(debug);
     }
 
     private Vector3 GetTileCenter(int x, int z)
