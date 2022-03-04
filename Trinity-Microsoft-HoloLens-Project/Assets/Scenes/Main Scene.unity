@@ -434,63 +434,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1532131024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1532131026}
-  - component: {fileID: 1532131025}
-  m_Layer: 0
-  m_Name: ChessBoard
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1532131025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532131024}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cacdc34774434ed4db5421e6cf7bee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chessPiecePrefabs:
-  - {fileID: 6598142014096886681, guid: 4e767767931bbee479cb63274994173c, type: 3}
-  - {fileID: 8170829477621927339, guid: 0216f602ac93a4c4389243c5a3b801f4, type: 3}
-  - {fileID: 3242889028783198081, guid: beff0e2c425eda44aa9d1683f0a6b17a, type: 3}
-  - {fileID: 3951750131093738726, guid: 18b11ae60b26ddf48985edac6ad301ff, type: 3}
-  - {fileID: 7287701328830216931, guid: bf64f2e7f9ac82d49b5b7dcfe4aebe6a, type: 3}
-  - {fileID: 6838714747143591047, guid: b2335793977825c48992806642ec4ad8, type: 3}
-  - {fileID: 4722832855540260606, guid: 6ad9ce0074759774fb0b25b3968f183b, type: 3}
-  - {fileID: 7454767877354353868, guid: 8260ed5d1f8495f49a99c6f174b7a664, type: 3}
-  - {fileID: 1029807487172040672, guid: eb49a45df722bab4c919779c2946fa80, type: 3}
-  - {fileID: 2828884723764849927, guid: f131003b57369ce47808130b20c28ac2, type: 3}
-  - {fileID: 4693600301223468597, guid: 1da9d0087b8e14045b27fe36bee77925, type: 3}
-  - {fileID: 6737087422963916925, guid: 64244b31345c96d448acb20b3fb974fb, type: 3}
-  activeChessPieces: []
---- !u!4 &1532131026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532131024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618231381
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +532,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.05, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1618231386
 Rigidbody:
