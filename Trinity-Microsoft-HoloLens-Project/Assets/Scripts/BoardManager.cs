@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoardManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class BoardManager : MonoBehaviour
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
     public Rigidbody board;
+    bool flipped = false;
 
     private void Update()
     {
@@ -39,6 +41,16 @@ public class BoardManager : MonoBehaviour
 
     public void tableFlip()
     {
-        board.AddExplosionForce(10f, new Vector3(10f, 10f), 2);
+        if (!flipped)
+        {
+            board.isKinematic = false;
+            board.AddForce(new Vector3(0f, 1000f), ForceMode.Impulse);
+            flipped = true;
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            flipped = false;
+        }
     }
 }
