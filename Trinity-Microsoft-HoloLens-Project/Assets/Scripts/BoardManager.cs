@@ -13,7 +13,7 @@ public class BoardManager : MonoBehaviour
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
-    public List<MeshCollider> ChessColliders;
+    public Rigidbody board;
 
     private void Update()
     {
@@ -22,15 +22,6 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
     }
-
-    private Vector3 GetTileCenter(int x, int z)
-    {
-        Vector3 tileCenter = Vector3.zero;
-        tileCenter.x += (TILE_SIZE * x) + TILE_OFFSET;
-        tileCenter.z += (TILE_SIZE * z) + TILE_OFFSET; 
-        return tileCenter;
-;    }
-
 
 
     public void ToggleKinematic()
@@ -44,5 +35,10 @@ public class BoardManager : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(0, 3, collide);
         collide = !collide;
+    }
+
+    public void tableFlip()
+    {
+        board.AddExplosionForce(10f, new Vector3(10f, 10f), 2);
     }
 }
