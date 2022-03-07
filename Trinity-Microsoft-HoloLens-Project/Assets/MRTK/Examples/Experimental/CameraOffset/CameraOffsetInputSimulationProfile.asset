@@ -15,8 +15,8 @@ MonoBehaviour:
   isCustomProfile: 1
   indicatorsPrefab: {fileID: 0}
   mouseRotationSensitivity: 0.1
-  mouseX: Mouse X
-  mouseY: Mouse Y
+  mouseX: 
+  mouseY: 
   mouseScroll: Mouse ScrollWheel
   interactionButton:
     bindingType: 1
