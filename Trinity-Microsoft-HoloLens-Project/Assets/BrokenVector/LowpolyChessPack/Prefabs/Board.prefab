@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3375590}
   - component: {fileID: 2331998}
   - component: {fileID: -8422113452992580912}
-  - component: {fileID: -712858097171444404}
   - component: {fileID: -5064094053081955227}
-  - component: {fileID: -7202142203442557578}
   - component: {fileID: 5455086229475742047}
   m_Layer: 0
   m_Name: Board
@@ -100,19 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!65 &-712858097171444404
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14.59906, y: 0.5290822, z: 14.59906}
-  m_Center: {x: 0, y: -0.01292409, z: 0}
 --- !u!54 &-5064094053081955227
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,38 +114,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &-7202142203442557578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
-  InputActionId: 2
-  isGlobal: 1
-  Dimensions: 1
-  dimensionIndex: 0
-  startDimensionIndex: 0
-  CanSelect: 1
-  CanDeselect: 1
-  voiceCommand: 
-  voiceRequiresFocus: 1
-  profiles:
-  - Target: {fileID: 166942}
-    Themes:
-    - {fileID: 0}
-  OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-  Events: []
-  resetOnDestroy: 0
-  enabledOnStart: 1
 --- !u!114 &5455086229475742047
 MonoBehaviour:
   m_ObjectHideFlags: 0
