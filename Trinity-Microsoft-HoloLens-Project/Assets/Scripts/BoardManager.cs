@@ -50,13 +50,28 @@ public class BoardManager : MonoBehaviour
     {
         Debug.Log("WORKING!");
         //get the indexes
-        int OldX = ((oldPos.x / TILE_OFFSET) - 1) as int;
-        int Oldy = ((oldPos.y / TILE_OFFSET) - 1) as int;
+        int oldX = (int) ((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        int oldY = (int) ((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
 
-        int NewX = ((newPos.x / TILE_OFFSET) - 1) as int;
-        int Newy = ((newPos.y / TILE_OFFSET) - 1) as int;
+        int newX = (int) ((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        int newY = (int) ((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
 
-        chessBoard[newX]
+        chessBoard[newX, newY] = chessBoard[oldX, oldY];
+        chessBoard[oldX, oldY] = EMPTY_SPACE;
+
+        //for debugging the array
+        /*
+        string debug = "";
+        for (int i = 0; i < 8; i++)
+        {
+            debug += "{";
+            for (int j = 0; j < 8; j++)
+            {
+                debug += chessBoard[i, j] + ", ";
+            }
+            debug += "} \n";
+        }
+        */
     }
 
     public void ToggleKinematic()
@@ -87,56 +102,56 @@ public class BoardManager : MonoBehaviour
             }
         }
 
-        //Black Chesspieces
+        //White Chesspieces
 
         //king
-        chessBoard[3, 0] = BLACK_KING;
+        chessBoard[3, 0] = WHITE_KING;
 
         //Queen
-        chessBoard[4, 0] = BLACK_QUEEN;
+        chessBoard[4, 0] = WHITE_QUEEN;
 
         //Rooks
-        chessBoard[0, 0] = BLACK_ROOK;
-        chessBoard[7, 0] = BLACK_ROOK;
+        chessBoard[0, 0] = WHITE_ROOK;
+        chessBoard[7, 0] = WHITE_ROOK;
 
         //Bishops
-        chessBoard[2, 0] = BLACK_BISHOP;
-        chessBoard[5, 0] = BLACK_BISHOP;
+        chessBoard[2, 0] = WHITE_BISHOP;
+        chessBoard[5, 0] = WHITE_BISHOP;
 
         //Knights
-        chessBoard[1, 0] = BLACK_KNIGHT;
-        chessBoard[6, 0] = BLACK_KNIGHT;
+        chessBoard[1, 0] = WHITE_KNIGHT;
+        chessBoard[6, 0] = WHITE_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 1] = BLACK_PAWN;
+            chessBoard[i, 1] = WHITE_PAWN;
         }
 
-        //White chesspieces
+        //Black chesspieces
 
         //king
-        chessBoard[3, 7] = WHITE_KING;
+        chessBoard[3, 7] = BLACK_KING;
 
         //Queen
-        chessBoard[4, 7] = WHITE_QUEEN;
+        chessBoard[4, 7] = BLACK_QUEEN;
 
         //Rooks
-        chessBoard[0, 7] = WHITE_ROOK;
-        chessBoard[7, 7] = WHITE_ROOK;
+        chessBoard[0, 7] = BLACK_ROOK;
+        chessBoard[7, 7] = BLACK_ROOK;
 
         //Bishops
-        chessBoard[2, 7] = WHITE_BISHOP;
-        chessBoard[5, 7] = WHITE_BISHOP;
+        chessBoard[2, 7] = BLACK_BISHOP;
+        chessBoard[5, 7] = BLACK_BISHOP;
 
         //Knights
-        chessBoard[1, 7] = WHITE_KNIGHT;
-        chessBoard[6, 7] = WHITE_KNIGHT;
+        chessBoard[1, 7] = BLACK_KNIGHT;
+        chessBoard[6, 7] = BLACK_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 6] = WHITE_PAWN;
+            chessBoard[i, 6] = BLACK_PAWN;
         }
     }
 }

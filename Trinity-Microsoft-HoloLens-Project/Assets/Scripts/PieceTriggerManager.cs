@@ -15,13 +15,15 @@ public class PieceTriggerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider trigger)
     {
-        newPos = trigger.bounds.center;
+        Debug.Log("ENTER");
+        newPos = trigger.transform.localPosition;
         if (oldPos != Vector3.zero && oldPos != newPos)
             boardManager.updateArray(oldPos, newPos);
     }
 
     private void OnTriggerExit(Collider trigger)
     {
-        oldPos = newPos;
+        Debug.Log("EXIT");
+        oldPos = trigger.transform.localPosition;
     }
 }
