@@ -47,23 +47,9 @@ public class BoardManager : MonoBehaviour
         InitialiseArray();
     }
 
-    void OnTriggerEnter(Collider pieceCollider)
+    public void updateArray(Vector3 oldPos, Vector3 newPos)
     {
-        Debug.Log("Hello! Enter");
-        ToggleTriggers();
-    }
 
-    void OnTriggerExit(Collider pieceCollider)
-    {
-        Debug.Log("Hello! Exit");
-    }
-
-    public void ToggleTriggers()
-    {
-        foreach (Collider trigger in boardTriggers)
-            trigger.enabled = !trigger.enabled;
-
-        Debug.Log("Hello! Trigger");
     }
 
     public void ToggleKinematic()
