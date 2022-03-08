@@ -13,14 +13,14 @@ public class PieceTriggerManager : MonoBehaviour
         boardManager = GameObject.Find("GameBoard").GetComponent<BoardManager>();
     }
 
-    private void OnTriggerEnter(BoxCollider trigger)
+    private void OnTriggerEnter(Collider trigger)
     {
-        newPos = trigger.center;
-        if (oldPos == Vector3.zero)
+        newPos = trigger.bounds.center;
+        if (oldPos != Vector3.zero && oldPos != newPos)
             boardManager.updateArray(oldPos, newPos);
     }
 
-    private void OnTriggerExit(BoxCollider trigger)
+    private void OnTriggerExit(Collider trigger)
     {
         oldPos = newPos;
     }

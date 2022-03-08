@@ -25,14 +25,13 @@ public class BoardManager : MonoBehaviour
     #endregion ChessPieceEnumeration
 
     //if one unit is 1 metre lets make the tiles 8cms for now
-    private const float TILE_OFFSET = 0.04f;
-    private const float TILE_SIZE = 0.08f;
+    private const float TILE_OFFSET = 0.76243f;
+    private const float TILE_SIZE = 1.52486f;
     private bool collide = true;
 
     private const int CHESSBOARD_SIZE = 8;
     private  int[,] chessBoard = new int[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
 
-    public List<Collider> boardTriggers;
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
@@ -49,7 +48,15 @@ public class BoardManager : MonoBehaviour
 
     public void updateArray(Vector3 oldPos, Vector3 newPos)
     {
+        Debug.Log("WORKING!");
+        //get the indexes
+        int OldX = ((oldPos.x / TILE_OFFSET) - 1) as int;
+        int Oldy = ((oldPos.y / TILE_OFFSET) - 1) as int;
 
+        int NewX = ((newPos.x / TILE_OFFSET) - 1) as int;
+        int Newy = ((newPos.y / TILE_OFFSET) - 1) as int;
+
+        chessBoard[newX]
     }
 
     public void ToggleKinematic()
