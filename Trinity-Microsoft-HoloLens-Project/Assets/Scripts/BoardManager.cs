@@ -49,22 +49,21 @@ public class BoardManager : MonoBehaviour
 
     void OnTriggerEnter(Collider pieceCollider)
     {
-
+        Debug.Log("Hello! Enter");
+        ToggleTriggers();
     }
 
-    void OnTrigerExit(Collider pieceCollider)
+    void OnTriggerExit(Collider pieceCollider)
     {
-
+        Debug.Log("Hello! Exit");
     }
 
-    void EnableTriggers()
+    public void ToggleTriggers()
     {
+        foreach (Collider trigger in boardTriggers)
+            trigger.enabled = !trigger.enabled;
 
-    }
-
-    void DisableTriggers()
-    {
-
+        Debug.Log("Hello! Trigger");
     }
 
     public void ToggleKinematic()
