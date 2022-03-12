@@ -28,6 +28,7 @@ public class BoardManager : MonoBehaviour
     private const float TILE_OFFSET = 0.76243f;
     private const float TILE_SIZE = 1.52486f;
     private bool collide = true;
+    private bool pieceCollide = false;
 
     private const int CHESSBOARD_SIZE = 8;
     private  int[,] chessBoard = new int[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
@@ -84,6 +85,12 @@ public class BoardManager : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(0, 3, collide);
         collide = !collide;
+    }
+
+    public void PieceCollideToggle()
+    {
+        Physics.IgnoreLayerCollision(3, 3, pieceCollide);
+        pieceCollide = !pieceCollide;
     }
 
     public void tableFlip()
