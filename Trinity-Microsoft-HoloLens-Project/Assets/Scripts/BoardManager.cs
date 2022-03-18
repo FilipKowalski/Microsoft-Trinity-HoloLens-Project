@@ -8,19 +8,19 @@ public class BoardManager : MonoBehaviour
 
     #region ChessPieceEnumeration
 
-    private int EMPTY_SPACE = -1;
-    private int BLACK_KING = 0;
-    private int BLACK_QUEEN = 1;
-    private int BLACK_ROOK = 2;
-    private int BLACK_BISHOP = 3;
-    private int BLACK_KNIGHT = 4;
-    private int BLACK_PAWN = 5;
-    private int WHITE_KING = 6;
-    private int WHITE_QUEEN = 7;
-    private int WHITE_ROOK = 8;
-    private int WHITE_BISHOP = 9;
-    private int WHITE_KNIGHT = 10;
-    private int WHITE_PAWN = 11;
+    private char EMPTY_SPACE = '1';
+    private char BLACK_KING = 'k';
+    private char BLACK_QUEEN = 'q';
+    private char BLACK_ROOK = 'r';
+    private char BLACK_BISHOP = 'b';
+    private char BLACK_KNIGHT = 'n';
+    private char BLACK_PAWN = 'p';
+    private char WHITE_KING = 'K';
+    private char WHITE_QUEEN = 'Q';
+    private char WHITE_ROOK = 'R';
+    private char WHITE_BISHOP = 'B';
+    private char WHITE_KNIGHT = 'N';
+    private char WHITE_PAWN = 'P';
 
     #endregion ChessPieceEnumeration
 
@@ -31,7 +31,7 @@ public class BoardManager : MonoBehaviour
     private bool pieceCollide = false;
 
     private const int CHESSBOARD_SIZE = 8;
-    private  int[,] chessBoard = new int[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    private char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
 
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
