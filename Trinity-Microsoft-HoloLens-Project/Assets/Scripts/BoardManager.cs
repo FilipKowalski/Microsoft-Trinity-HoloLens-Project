@@ -6,7 +6,7 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-    #region ChessPieceEnumeration
+    #region ED Notation
 
     private char EMPTY_SPACE = '1';
     private char BLACK_KING = 'k';
@@ -22,7 +22,13 @@ public class BoardManager : MonoBehaviour
     private char WHITE_KNIGHT = 'N';
     private char WHITE_PAWN = 'P';
 
-    #endregion ChessPieceEnumeration
+    private char moving = 'w';
+    private char WHITE = 'w';
+    private char BLACK = 'b';
+
+    private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
+
+    #endregion ED Notation
 
     //if one unit is 1 metre lets make the tiles 8cms for now
     private const float TILE_OFFSET = 0.76243f;
@@ -45,7 +51,9 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         InitialiseArray();
+        Debug.Log(ArrayToForsythEdwards(chessBoard));
     }
+
 
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
@@ -160,5 +168,23 @@ public class BoardManager : MonoBehaviour
         {
             chessBoard[i, 6] = BLACK_PAWN;
         }
+    }
+
+    private string ArrayToForsythEdwards(char[,] chessBoard)
+    {
+        string FED = "";
+        //game state to FED
+        for (int i = 7; i >= 0; i--)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                FED += chessBoard[j, i];
+            }
+            // we dont want the / after the last line
+            if (i > 0) { FED += '/'; }
+        }
+        //whos turn it is and options Next Chess Move Needs (these dont change)
+        FED += " " + moving + " " + NEXTCHESSMOVE_OPTIONS;
+        return FED;
     }
 }
