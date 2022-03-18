@@ -47,7 +47,7 @@ public class BoardManager : MonoBehaviour
         InitialiseArray();
     }
 
-    public void updateArray(Vector3 oldPos, Vector3 newPos)
+    public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
         Debug.Log("WORKING!");
         //get the indexes
