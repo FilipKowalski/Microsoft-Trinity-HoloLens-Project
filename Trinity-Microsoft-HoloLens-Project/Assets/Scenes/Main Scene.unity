@@ -1982,6 +1982,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1300234558}
     - target: {fileID: 5455086229475742047, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
+      propertyPath: allowFarManipulation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455086229475742047, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
