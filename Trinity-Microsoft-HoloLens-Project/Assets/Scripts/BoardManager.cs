@@ -6,23 +6,29 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-    #region ChessPieceEnumeration
+    #region ED Notation
 
-    private int EMPTY_SPACE = -1;
-    private int BLACK_KING = 0;
-    private int BLACK_QUEEN = 1;
-    private int BLACK_ROOK = 2;
-    private int BLACK_BISHOP = 3;
-    private int BLACK_KNIGHT = 4;
-    private int BLACK_PAWN = 5;
-    private int WHITE_KING = 6;
-    private int WHITE_QUEEN = 7;
-    private int WHITE_ROOK = 8;
-    private int WHITE_BISHOP = 9;
-    private int WHITE_KNIGHT = 10;
-    private int WHITE_PAWN = 11;
+    private char EMPTY_SPACE = '1';
+    private char BLACK_KING = 'k';
+    private char BLACK_QUEEN = 'q';
+    private char BLACK_ROOK = 'r';
+    private char BLACK_BISHOP = 'b';
+    private char BLACK_KNIGHT = 'n';
+    private char BLACK_PAWN = 'p';
+    private char WHITE_KING = 'K';
+    private char WHITE_QUEEN = 'Q';
+    private char WHITE_ROOK = 'R';
+    private char WHITE_BISHOP = 'B';
+    private char WHITE_KNIGHT = 'N';
+    private char WHITE_PAWN = 'P';
 
-    #endregion ChessPieceEnumeration
+    private char moving = 'w';
+    private char WHITE = 'w';
+    private char BLACK = 'b';
+
+    private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
+
+    #endregion ED Notation
 
     //if one unit is 1 metre lets make the tiles 8cms for now
     private const float TILE_OFFSET = 0.76243f;
@@ -31,7 +37,7 @@ public class BoardManager : MonoBehaviour
     private bool pieceCollide = false;
 
     private const int CHESSBOARD_SIZE = 8;
-    private  int[,] chessBoard = new int[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    private char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
 
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
@@ -45,9 +51,11 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         InitialiseArray();
+        Debug.Log(ArrayToForsythEdwards(chessBoard));
     }
 
-    public void updateArray(Vector3 oldPos, Vector3 newPos)
+
+    public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
         Debug.Log("WORKING!");
         //get the indexes
@@ -160,5 +168,23 @@ public class BoardManager : MonoBehaviour
         {
             chessBoard[i, 6] = BLACK_PAWN;
         }
+    }
+
+    private string ArrayToForsythEdwards(char[,] chessBoard)
+    {
+        string FED = "";
+        //game state to FED
+        for (int i = 7; i >= 0; i--)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                FED += chessBoard[j, i];
+            }
+            // we dont want the / after the last line
+            if (i > 0) { FED += '/'; }
+        }
+        //whos turn it is and options Next Chess Move Needs (these dont change)
+        FED += " " + moving + " " + NEXTCHESSMOVE_OPTIONS;
+        return FED;
     }
 }

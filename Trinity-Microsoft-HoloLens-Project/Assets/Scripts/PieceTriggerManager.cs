@@ -18,7 +18,7 @@ public class PieceTriggerManager : MonoBehaviour
         Debug.Log("ENTER");
         newPos = trigger.transform.localPosition;
         if (oldPos != Vector3.zero && oldPos != newPos)
-            boardManager.updateArray(oldPos, newPos);
+            boardManager.UpdateArray(oldPos, newPos);
     }
 
     private void OnTriggerExit(Collider trigger)
