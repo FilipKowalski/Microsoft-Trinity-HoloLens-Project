@@ -6,23 +6,29 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-    #region ChessPieceEnumeration
+    #region ED Notation
 
-    private int EMPTY_SPACE = -1;
-    private int BLACK_KING = 0;
-    private int BLACK_QUEEN = 1;
-    private int BLACK_ROOK = 2;
-    private int BLACK_BISHOP = 3;
-    private int BLACK_KNIGHT = 4;
-    private int BLACK_PAWN = 5;
-    private int WHITE_KING = 6;
-    private int WHITE_QUEEN = 7;
-    private int WHITE_ROOK = 8;
-    private int WHITE_BISHOP = 9;
-    private int WHITE_KNIGHT = 10;
-    private int WHITE_PAWN = 11;
+    private char EMPTY_SPACE = '1';
+    private char BLACK_KING = 'k';
+    private char BLACK_QUEEN = 'q';
+    private char BLACK_ROOK = 'r';
+    private char BLACK_BISHOP = 'b';
+    private char BLACK_KNIGHT = 'n';
+    private char BLACK_PAWN = 'p';
+    private char WHITE_KING = 'K';
+    private char WHITE_QUEEN = 'Q';
+    private char WHITE_ROOK = 'R';
+    private char WHITE_BISHOP = 'B';
+    private char WHITE_KNIGHT = 'N';
+    private char WHITE_PAWN = 'P';
 
-    #endregion ChessPieceEnumeration
+    private char moving = 'w';
+    private char WHITE = 'w';
+    private char BLACK = 'b';
+
+    private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
+
+    #endregion ED Notation
 
     //if one unit is 1 metre lets make the tiles 8cms for now
     private const float TILE_OFFSET = 0.76243f;
@@ -36,6 +42,7 @@ public class BoardManager : MonoBehaviour
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
+    public List<Collider> ChessColliders;
     public Rigidbody board;
 
     private void Update()
@@ -89,8 +96,11 @@ public class BoardManager : MonoBehaviour
 
     public void PieceCollideToggle()
     {
-        Physics.IgnoreLayerCollision(3, 3, pieceCollide);
-        pieceCollide = !pieceCollide;
+        foreach (Collider piece1 in ChessColliders)
+            foreach (Collider piece2 in ChessColliders)
+                Physics.IgnoreCollision(piece1, piece2, pieceCollide);
+
+                pieceCollide = !pieceCollide;
     }
 
     public void tableFlip()
