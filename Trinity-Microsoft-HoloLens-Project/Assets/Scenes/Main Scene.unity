@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -600,7 +600,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -995,6 +995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+--- !u!64 &157649360 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+  m_PrefabInstance: {fileID: 157649359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170860639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &175396571 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 175396570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &181439261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+--- !u!64 &261515281 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+  m_PrefabInstance: {fileID: 261515280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &280207938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
@@ -1705,7 +1720,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 280207945}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -1876,6 +1891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &319580870 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 319580869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &319829739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1958,7 +1978,6 @@ PrefabInstance:
     - target: {fileID: 5455086229475742047, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: allowFarManipulation
       value: 0
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5455086229475742047, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: onManipulationEnded.m_PersistentCalls.m_Calls.Array.size
@@ -3122,6 +3141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
+--- !u!64 &458850259 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+  m_PrefabInstance: {fileID: 458850258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &481871471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3191,6 +3215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &481871472 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 481871471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &491327961 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -3379,7 +3408,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 508508189}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3506,6 +3535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &511484865 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 511484864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &521605541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3571,6 +3605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+--- !u!64 &521605542 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+  m_PrefabInstance: {fileID: 521605541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549738904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+--- !u!64 &590099607 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+  m_PrefabInstance: {fileID: 590099606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &614437573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -3839,7 +3883,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 614437580}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -4344,6 +4388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &688847954 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 688847953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &701508147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,6 +4506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+--- !u!64 &722384553 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+  m_PrefabInstance: {fileID: 722384552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &725880450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,6 +4664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+--- !u!64 &765475694 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+  m_PrefabInstance: {fileID: 765475693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &773052711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +4949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+--- !u!64 &802458780 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+  m_PrefabInstance: {fileID: 802458779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804883242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4955,7 +5019,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 804883249}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -5257,6 +5321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &827677741 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 827677740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &850117122
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,7 +5435,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 859750560}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -5533,6 +5602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &865553652 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 865553651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879155222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,6 +5764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &912272286 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 912272285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &914082019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5755,6 +5834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &914082020 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 914082019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &960548297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5820,6 +5904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &960548298 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 960548297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961061147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -6039,7 +6128,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1013146366}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -6298,6 +6387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+--- !u!64 &1098549726 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+  m_PrefabInstance: {fileID: 1098549725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1100307531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6367,6 +6461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+--- !u!64 &1100307532 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+  m_PrefabInstance: {fileID: 1100307531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130979151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6432,6 +6531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &1130979152 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 1130979151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135475617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -6933,6 +7037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763435837405bc24691af77936be360b, type: 3}
+--- !u!64 &1184812008 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 763435837405bc24691af77936be360b, type: 3}
+  m_PrefabInstance: {fileID: 1184812007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194692350
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,6 +7155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+--- !u!64 &1236584007 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+  m_PrefabInstance: {fileID: 1236584006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1268773953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7187,6 +7301,39 @@ MonoBehaviour:
   - {fileID: 1936327397}
   - {fileID: 508508191}
   - {fileID: 1985303806}
+  ChessColliders:
+  - {fileID: 1236584007}
+  - {fileID: 261515281}
+  - {fileID: 1098549726}
+  - {fileID: 722384553}
+  - {fileID: 802458780}
+  - {fileID: 2028381238}
+  - {fileID: 912272286}
+  - {fileID: 319580870}
+  - {fileID: 481871472}
+  - {fileID: 688847954}
+  - {fileID: 1793697735}
+  - {fileID: 511484865}
+  - {fileID: 1784613848}
+  - {fileID: 1100307532}
+  - {fileID: 458850259}
+  - {fileID: 2090075094}
+  - {fileID: 1767244263}
+  - {fileID: 765475694}
+  - {fileID: 590099607}
+  - {fileID: 1729579511}
+  - {fileID: 175396571}
+  - {fileID: 1582407438}
+  - {fileID: 865553652}
+  - {fileID: 1130979152}
+  - {fileID: 960548298}
+  - {fileID: 827677741}
+  - {fileID: 914082020}
+  - {fileID: 1912441162}
+  - {fileID: 2024392592}
+  - {fileID: 1184812008}
+  - {fileID: 157649360}
+  - {fileID: 521605542}
   board: {fileID: 0}
 --- !u!75 &1300234555
 ConstantForce:
@@ -8308,6 +8455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &1582407438 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 1582407437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616191381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
@@ -8927,7 +9079,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1719017669}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -9094,6 +9246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!64 &1729579511 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+  m_PrefabInstance: {fileID: 1729579510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1747725439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
@@ -9159,7 +9316,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1747725446}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -9326,6 +9483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+--- !u!64 &1767244263 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+  m_PrefabInstance: {fileID: 1767244262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778485063
 GameObject:
   m_ObjectHideFlags: 0
@@ -9439,6 +9601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &1784613848 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 1784613847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1793697734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9512,6 +9679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &1793697735 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 1793697734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1808435964
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,6 +10101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+--- !u!64 &1912441162 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+  m_PrefabInstance: {fileID: 1912441161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1920259931
 GameObject:
   m_ObjectHideFlags: 0
@@ -10038,7 +10215,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1936327395}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10328,7 +10505,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1985303804}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10541,6 +10718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+--- !u!64 &2024392592 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+  m_PrefabInstance: {fileID: 2024392591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2028381237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10610,6 +10792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!64 &2028381238 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+  m_PrefabInstance: {fileID: 2028381237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2045446380
 GameObject:
   m_ObjectHideFlags: 0
@@ -10763,7 +10950,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 2077135259}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10890,6 +11077,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
+--- !u!64 &2090075094 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+  m_PrefabInstance: {fileID: 2090075093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2103990807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
