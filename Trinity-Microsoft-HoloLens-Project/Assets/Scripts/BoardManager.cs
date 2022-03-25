@@ -64,6 +64,7 @@ public class BoardManager : MonoBehaviour
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
+    public List<Collider> ChessCollider;
     public Rigidbody board;
 
     private void Update()
@@ -119,7 +120,10 @@ public class BoardManager : MonoBehaviour
 
     public void PieceCollideToggle()
     {
-        Physics.IgnoreLayerCollision(3, 3, pieceCollide);
+        foreach (Collider piece1 in ChessColliders)
+            foreach (Collider piece2 in ChessColliders)
+                Physics.IgnoreCollision(piece1, piece2, pieceCollide);
+
         pieceCollide = !pieceCollide;
     }
 
