@@ -1715,7 +1715,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 280207945}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3401,7 +3401,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 623124373}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -4133,7 +4133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793014024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.86187, y: 0, z: 3.81215}
+  m_LocalPosition: {x: 8.38673, y: 0, z: 3.81215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 549738905}
@@ -5179,6 +5179,10 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9
       objectReference: {fileID: 0}
@@ -6152,7 +6156,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1135475624}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -6786,39 +6790,70 @@ MonoBehaviour:
   - {fileID: 107724, guid: 7248632fb471af143947a88a47eae959, type: 3}
   - {fileID: 104878, guid: 48d5ea4ff810d0e4ea36af7235dd5fd7, type: 3}
   activeChessPieces:
-  - {fileID: 1973073820}
-  - {fileID: 368884000}
-  - {fileID: 1468350131}
-  - {fileID: 52078565}
-  - {fileID: 280207938}
-  - {fileID: 1135475617}
-  - {fileID: 1621862835}
-  - {fileID: 2103990807}
-  - {fileID: 1438173171}
-  - {fileID: 491327961}
-  - {fileID: 961061147}
-  - {fileID: 647798388}
-  - {fileID: 1383135967}
-  - {fileID: 794611473}
-  - {fileID: 1571222887}
-  - {fileID: 623124366}
-  - {fileID: 1616191381}
-  - {fileID: 1490366319}
-  - {fileID: 1554115769}
-  - {fileID: 1013146359}
-  - {fileID: 65895731}
-  - {fileID: 859750553}
-  - {fileID: 2077135252}
-  - {fileID: 614437573}
-  - {fileID: 61110328}
-  - {fileID: 804883242}
-  - {fileID: 1936327388}
-  - {fileID: 508508182}
-  - {fileID: 1985303797}
-  - {fileID: 1747725439}
   - {fileID: 1719017662}
+  - {fileID: 1985303797}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1383135967}
+  - {fileID: 623124366}
+  - {fileID: 65895731}
+  - {fileID: 508508182}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 647798388}
+  - {fileID: 52078565}
+  - {fileID: 1490366319}
+  - {fileID: 1936327388}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 961061147}
+  - {fileID: 368884000}
+  - {fileID: 1747725439}
+  - {fileID: 804883242}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 491327961}
+  - {fileID: 794611473}
+  - {fileID: 1554115769}
+  - {fileID: 61110328}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1438173171}
+  - {fileID: 1468350131}
+  - {fileID: 1616191381}
+  - {fileID: 614437573}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2103990807}
+  - {fileID: 1973073820}
+  - {fileID: 1013146359}
+  - {fileID: 2077135252}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1621862835}
+  - {fileID: 280207938}
   - {fileID: 227627450}
-  - {fileID: 1300234552}
+  - {fileID: 859750553}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1135475617}
+  - {fileID: 1571222887}
   ChessRigidBodies:
   - {fileID: 1468350140}
   - {fileID: 794611482}
@@ -7470,7 +7505,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1468350138}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -9441,7 +9476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842974593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.28729, y: 0, z: 11.43645}
+  m_LocalPosition: {x: 3.81215, y: 0, z: 11.43645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 549738905}

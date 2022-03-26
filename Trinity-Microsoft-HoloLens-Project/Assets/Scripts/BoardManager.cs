@@ -31,6 +31,8 @@ public class BoardManager : MonoBehaviour
 
     private string APIurl = "https://www.chessdb.cn/cdb.php?action=querybest&board=";
 
+    Dictionary<char, int> ChessPositionToInt = new Dictionary<char, int>();
+
     #endregion FED Notation / API Calls
 
     private const float TILE_OFFSET = 0.76243f;
@@ -54,6 +56,19 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         InitialiseArray();
+        CreateDictionary();
+    }
+
+    private void CreateDictionary()
+    {
+        ChessPositionToInt.Add('a', 0);
+        ChessPositionToInt.Add('b', 1);
+        ChessPositionToInt.Add('c', 2);
+        ChessPositionToInt.Add('d', 3);
+        ChessPositionToInt.Add('e', 4);
+        ChessPositionToInt.Add('f', 5);
+        ChessPositionToInt.Add('g', 6);
+        ChessPositionToInt.Add('h', 7);
     }
 
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
@@ -192,7 +207,38 @@ public class BoardManager : MonoBehaviour
         encode = System.Text.Encoding.GetEncoding("utf-8");
         StreamReader readStream;
         readStream = new StreamReader(receiveStream, encode);
-        Debug.Log(fed);
-        Debug.Log(readStream.ReadLine());
+
+        string move = readStream.ReadLine();
+        if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+        {
+            Debug.Log(move);
+            Debug.Log(fed);
+            int oldX = ChessPositionToInt[move[5]];
+            int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
+            int newX = ChessPositionToInt[move[7]];
+            int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
+
+            UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+        }
+    }
+
+    private void UpdateAndMoveActiveChessPieces(int oldX, int oldY, int newX, int newY)
+    {
+        //destroy chess piece if the move is a take move
+        if (chessBoard[newX, newY] != '1')
+        {
+            Destroy(activeChessPieces[((newX * 8) + newY)]);
+            Debug.Log("Hellp");
+        }
+
+        //move chessPieceInScene
+        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
+
+        //update the gamestate
+        chessBoard[newY, newX] = chessBoard[oldY, oldX];
+        chessBoard[oldY, oldX] = '1';
+
+        //move chess piece GameObjects in the 1d array
+        activeChessPieces[((newX * 8) + newY)] = activeChessPieces[((oldX * 8) + oldY)];
     }
 }
