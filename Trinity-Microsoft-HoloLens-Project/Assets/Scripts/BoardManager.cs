@@ -6,7 +6,7 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-    #region FED Notation
+    #region FED Notation / API Calls
 
     private char EMPTY_SPACE = '1';
     private char BLACK_KING = 'k';
@@ -26,9 +26,9 @@ public class BoardManager : MonoBehaviour
     private char WHITE = 'w';
     private char BLACK = 'b';
 
-    private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
+    private string APIurl = "https://www.chessdb.cn/cdb.php?action=querybest&board=";
 
-    #endregion FED Notation
+    #endregion FED Notation / API Calls
 
     private const float TILE_OFFSET = 0.76243f;
     private const float TILE_SIZE = 1.52486f;
@@ -172,7 +172,7 @@ public class BoardManager : MonoBehaviour
             if (i < 7) { FED += '/'; }
         }
         //whos turn it is and options Next Chess Move Needs (these dont change)
-        FED += " " + AIPlayer + " " + NEXTCHESSMOVE_OPTIONS;
+        FED += " " + AIPlayer;
         return FED;
     }
 }
