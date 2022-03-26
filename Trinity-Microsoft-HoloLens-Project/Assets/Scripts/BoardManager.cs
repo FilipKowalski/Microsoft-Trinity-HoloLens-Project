@@ -30,7 +30,6 @@ public class BoardManager : MonoBehaviour
 
     #endregion FED Notation
 
-    //if one unit is 1 metre lets make the tiles 8cms for now
     private const float TILE_OFFSET = 0.76243f;
     private const float TILE_SIZE = 1.52486f;
     private bool collide = true;
@@ -58,7 +57,7 @@ public class BoardManager : MonoBehaviour
 
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
-        Debug.Log("WORKING!");
+        //Debug.Log("WORKING!");
         //get the indexes
         int oldX = (int) ((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
         int oldY = (int) ((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
@@ -70,18 +69,19 @@ public class BoardManager : MonoBehaviour
         chessBoard[oldX, oldY] = EMPTY_SPACE;
 
         //for debugging the array
-        
-        string debug = "";
-        for (int i = 0; i < 8; i++)
-        {
-            debug += "{";
-            for (int j = 0; j < 8; j++)
-            {
-                debug += chessBoard[i, j] + ", ";
-            }
-            debug += "} \n";
-        }
-        Debug.Log(debug);
+
+        //string debug = "";
+        //for (int i = 0; i < 8; i++)
+        //{
+        //    debug += "{";
+        //    for (int j = 0; j < 8; j++)
+        //    {
+        //        debug += chessBoard[i, j] + ", ";
+        //    }
+        //    debug += "} \n";
+        //}
+        //Debug.Log(debug);
+        Debug.Log(ArrayToForsythEdwards(chessBoard));
     }
     
     public void ToggleKinematic()
