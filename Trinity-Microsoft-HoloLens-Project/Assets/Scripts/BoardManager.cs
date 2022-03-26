@@ -1,4 +1,7 @@
 using System;
+using System.Net;
+using System.Text;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -177,6 +180,18 @@ public class BoardManager : MonoBehaviour
 
     public void EndTurn()
     {
-        Debug.Log("End Turn");
+        Debug.Log("Start End Turn");
+        string fed = ArrayToForsythEdwards(chessBoard);
+        WebRequest request = WebRequest.Create(APIurl + fed);
+        request.Method = "GET";
+        WebResponse response;
+        response = request.GetResponse();
+        Stream receiveStream;
+        receiveStream = response.GetResponseStream();
+        Encoding encode;
+        encode = System.Text.Encoding.GetEncoding("utf-8");
+        StreamReader readStream;
+        readStream = new StreamReader(receiveStream, encode);
+        Debug.Log("End End Turn");
     }
 }
