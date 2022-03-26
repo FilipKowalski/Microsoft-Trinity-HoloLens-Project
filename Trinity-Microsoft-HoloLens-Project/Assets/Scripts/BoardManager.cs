@@ -6,8 +6,7 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-<<<<<<< Updated upstream
-    #region ED Notation
+    #region FED Notation
 
     private char EMPTY_SPACE = '1';
     private char BLACK_KING = 'k';
@@ -23,34 +22,13 @@ public class BoardManager : MonoBehaviour
     private char WHITE_KNIGHT = 'N';
     private char WHITE_PAWN = 'P';
 
-    private char moving = 'w';
+    private char AIPlayer = 'w';
     private char WHITE = 'w';
     private char BLACK = 'b';
 
     private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
 
-    #endregion ED Notation
-=======
-    #region ChessPieceEnumeration
-
-    private int EMPTY_SPACE = -1;
-    private int BLACK_KING = 0;
-    private int BLACK_QUEEN = 1;
-    private int BLACK_ROOK = 2;
-    private int BLACK_BISHOP = 3;
-    private int BLACK_KNIGHT = 4;
-    private int BLACK_PAWN = 5;
-    private int WHITE_KING = 6;
-    private int WHITE_QUEEN = 7;
-    private int WHITE_ROOK = 8;
-    private int WHITE_BISHOP = 9;
-    private int WHITE_KNIGHT = 10;
-    private int WHITE_PAWN = 11;
-    private int defaultLayer = 0;
-    private int chessPieceLayer = 3;
-
-    #endregion ChessPieceEnumeration
->>>>>>> Stashed changes
+    #endregion FED Notation
 
     //if one unit is 1 metre lets make the tiles 8cms for now
     private const float TILE_OFFSET = 0.76243f;
@@ -64,7 +42,7 @@ public class BoardManager : MonoBehaviour
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
-    public List<Collider> ChessCollider;
+    public List<Collider> ChessColliders;
     public Rigidbody board;
 
     private void Update()
@@ -210,7 +188,7 @@ public class BoardManager : MonoBehaviour
             if (i > 0) { FED += '/'; }
         }
         //whos turn it is and options Next Chess Move Needs (these dont change)
-        FED += " " + moving + " " + NEXTCHESSMOVE_OPTIONS;
+        FED += " " + AIPlayer + " " + NEXTCHESSMOVE_OPTIONS;
         return FED;
     }
 }
