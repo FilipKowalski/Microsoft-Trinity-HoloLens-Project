@@ -53,7 +53,6 @@ public class BoardManager : MonoBehaviour
         InitialiseArray();
     }
 
-
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
         //get the indexes
@@ -174,5 +173,10 @@ public class BoardManager : MonoBehaviour
         //whos turn it is and options Next Chess Move Needs (these dont change)
         FED += " " + AIPlayer;
         return FED;
+    }
+
+    public void EndTurn()
+    {
+        Debug.Log("End Turn");
     }
 }
