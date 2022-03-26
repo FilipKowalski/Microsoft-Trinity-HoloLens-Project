@@ -25,7 +25,7 @@ public class BoardManager : MonoBehaviour
     private char WHITE_KNIGHT = 'N';
     private char WHITE_PAWN = 'P';
 
-    private char AIPlayer = 'w';
+    private char AIPlayer = 'b';
     private char WHITE = 'w';
     private char BLACK = 'b';
 
@@ -192,6 +192,7 @@ public class BoardManager : MonoBehaviour
         encode = System.Text.Encoding.GetEncoding("utf-8");
         StreamReader readStream;
         readStream = new StreamReader(receiveStream, encode);
-        Debug.Log("End End Turn");
+        Debug.Log(fed);
+        Debug.Log(readStream.ReadLine());
     }
 }
