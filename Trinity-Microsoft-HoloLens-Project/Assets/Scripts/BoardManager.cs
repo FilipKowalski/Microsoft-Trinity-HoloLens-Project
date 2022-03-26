@@ -70,7 +70,7 @@ public class BoardManager : MonoBehaviour
         chessBoard[oldX, oldY] = EMPTY_SPACE;
 
         //for debugging the array
-        /*
+        
         string debug = "";
         for (int i = 0; i < 8; i++)
         {
@@ -81,9 +81,9 @@ public class BoardManager : MonoBehaviour
             }
             debug += "} \n";
         }
-        */
+        Debug.Log(debug);
     }
-
+    
     public void ToggleKinematic()
     {
         foreach (Rigidbody piece in ChessRigidBodies)
@@ -124,53 +124,53 @@ public class BoardManager : MonoBehaviour
         //White Chesspieces
 
         //king
-        chessBoard[3, 0] = WHITE_KING;
+        chessBoard[0, 3] = WHITE_QUEEN;
 
         //Queen
-        chessBoard[4, 0] = WHITE_QUEEN;
+        chessBoard[0, 4] = WHITE_KING;
 
         //Rooks
         chessBoard[0, 0] = WHITE_ROOK;
-        chessBoard[7, 0] = WHITE_ROOK;
+        chessBoard[0, 7] = WHITE_ROOK;
 
         //Bishops
-        chessBoard[2, 0] = WHITE_BISHOP;
-        chessBoard[5, 0] = WHITE_BISHOP;
+        chessBoard[0, 2] = WHITE_BISHOP;
+        chessBoard[0, 5] = WHITE_BISHOP;
 
         //Knights
-        chessBoard[1, 0] = WHITE_KNIGHT;
-        chessBoard[6, 0] = WHITE_KNIGHT;
+        chessBoard[0, 1] = WHITE_KNIGHT;
+        chessBoard[0, 6] = WHITE_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 1] = WHITE_PAWN;
+            chessBoard[1, i] = WHITE_PAWN;
         }
 
         //Black chesspieces
 
         //king
-        chessBoard[3, 7] = BLACK_KING;
+        chessBoard[7, 3] = BLACK_QUEEN;
 
         //Queen
-        chessBoard[4, 7] = BLACK_QUEEN;
+        chessBoard[7, 4] = BLACK_KING;
 
         //Rooks
-        chessBoard[0, 7] = BLACK_ROOK;
+        chessBoard[7, 0] = BLACK_ROOK;
         chessBoard[7, 7] = BLACK_ROOK;
 
         //Bishops
-        chessBoard[2, 7] = BLACK_BISHOP;
-        chessBoard[5, 7] = BLACK_BISHOP;
+        chessBoard[7, 2] = BLACK_BISHOP;
+        chessBoard[7, 5] = BLACK_BISHOP;
 
         //Knights
-        chessBoard[1, 7] = BLACK_KNIGHT;
-        chessBoard[6, 7] = BLACK_KNIGHT;
+        chessBoard[7, 1] = BLACK_KNIGHT;
+        chessBoard[7, 6] = BLACK_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 6] = BLACK_PAWN;
+            chessBoard[6, i] = BLACK_PAWN;
         }
     }
 
@@ -178,14 +178,14 @@ public class BoardManager : MonoBehaviour
     {
         string FED = "";
         //game state to FED
-        for (int i = 7; i >= 0; i--)
+        for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                FED += chessBoard[j, i];
+                FED += chessBoard[i, j];
             }
             // we dont want the / after the last line
-            if (i > 0) { FED += '/'; }
+            if (i < 7) { FED += '/'; }
         }
         //whos turn it is and options Next Chess Move Needs (these dont change)
         FED += " " + AIPlayer + " " + NEXTCHESSMOVE_OPTIONS;
