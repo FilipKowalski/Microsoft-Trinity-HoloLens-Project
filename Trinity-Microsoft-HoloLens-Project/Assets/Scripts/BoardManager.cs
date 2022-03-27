@@ -1,4 +1,7 @@
 using System;
+using System.Net;
+using System.Text;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +9,7 @@ using UnityEngine;
 public class BoardManager : MonoBehaviour
 {
 
-    #region FED Notation
+    #region FED Notation / API Calls
 
     private char EMPTY_SPACE = '1';
     private char BLACK_KING = 'k';
@@ -22,15 +25,17 @@ public class BoardManager : MonoBehaviour
     private char WHITE_KNIGHT = 'N';
     private char WHITE_PAWN = 'P';
 
-    private char AIPlayer = 'w';
+    private char AIPlayer = 'b';
     private char WHITE = 'w';
     private char BLACK = 'b';
 
-    private string NEXTCHESSMOVE_OPTIONS = "- - 0 1";
+    private string APIurlBest = "https://www.chessdb.cn/cdb.php?action=querybest&board=";
+    private string APIurlRandom = "https://www.chessdb.cn/cdb.php?action=querysearch&board=";
 
-    #endregion FED Notation
+    Dictionary<char, int> ChessPositionToInt = new Dictionary<char, int>();
 
-    //if one unit is 1 metre lets make the tiles 8cms for now
+    #endregion FED Notation / API Calls
+
     private const float TILE_OFFSET = 0.76243f;
     private const float TILE_SIZE = 1.52486f;
     private bool collide = true;
@@ -52,13 +57,23 @@ public class BoardManager : MonoBehaviour
     private void Start()
     {
         InitialiseArray();
-        Debug.Log(ArrayToForsythEdwards(chessBoard));
+        CreateDictionary();
     }
 
+    private void CreateDictionary()
+    {
+        ChessPositionToInt.Add('a', 0);
+        ChessPositionToInt.Add('b', 1);
+        ChessPositionToInt.Add('c', 2);
+        ChessPositionToInt.Add('d', 3);
+        ChessPositionToInt.Add('e', 4);
+        ChessPositionToInt.Add('f', 5);
+        ChessPositionToInt.Add('g', 6);
+        ChessPositionToInt.Add('h', 7);
+    }
 
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
-        Debug.Log("WORKING!");
         //get the indexes
         int oldX = (int) ((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
         int oldY = (int) ((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
@@ -68,22 +83,8 @@ public class BoardManager : MonoBehaviour
 
         chessBoard[newX, newY] = chessBoard[oldX, oldY];
         chessBoard[oldX, oldY] = EMPTY_SPACE;
-
-        //for debugging the array
-        /*
-        string debug = "";
-        for (int i = 0; i < 8; i++)
-        {
-            debug += "{";
-            for (int j = 0; j < 8; j++)
-            {
-                debug += chessBoard[i, j] + ", ";
-            }
-            debug += "} \n";
-        }
-        */
     }
-
+    
     public void ToggleKinematic()
     {
         foreach (Rigidbody piece in ChessRigidBodies)
@@ -112,6 +113,7 @@ public class BoardManager : MonoBehaviour
 
     public void InitialiseArray()
     {
+        //point 0, 0 is at the top left side of the board as viewed from in editor
         //initialise array
         for (int i = 0; i < 8; i++)
         {
@@ -124,53 +126,53 @@ public class BoardManager : MonoBehaviour
         //White Chesspieces
 
         //king
-        chessBoard[3, 0] = WHITE_KING;
+        chessBoard[0, 3] = BLACK_QUEEN;
 
         //Queen
-        chessBoard[4, 0] = WHITE_QUEEN;
+        chessBoard[0, 4] = BLACK_KING;
 
         //Rooks
-        chessBoard[0, 0] = WHITE_ROOK;
-        chessBoard[7, 0] = WHITE_ROOK;
+        chessBoard[0, 0] = BLACK_ROOK;
+        chessBoard[0, 7] = BLACK_ROOK;
 
         //Bishops
-        chessBoard[2, 0] = WHITE_BISHOP;
-        chessBoard[5, 0] = WHITE_BISHOP;
+        chessBoard[0, 2] = BLACK_BISHOP;
+        chessBoard[0, 5] = BLACK_BISHOP;
 
         //Knights
-        chessBoard[1, 0] = WHITE_KNIGHT;
-        chessBoard[6, 0] = WHITE_KNIGHT;
+        chessBoard[0, 1] = BLACK_KNIGHT;
+        chessBoard[0, 6] = BLACK_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 1] = WHITE_PAWN;
+            chessBoard[1, i] = BLACK_PAWN;
         }
 
         //Black chesspieces
 
         //king
-        chessBoard[3, 7] = BLACK_KING;
+        chessBoard[7, 3] = WHITE_QUEEN;
 
         //Queen
-        chessBoard[4, 7] = BLACK_QUEEN;
+        chessBoard[7, 4] = WHITE_KING;
 
         //Rooks
-        chessBoard[0, 7] = BLACK_ROOK;
-        chessBoard[7, 7] = BLACK_ROOK;
+        chessBoard[7, 0] = WHITE_ROOK;
+        chessBoard[7, 7] = WHITE_ROOK;
 
         //Bishops
-        chessBoard[2, 7] = BLACK_BISHOP;
-        chessBoard[5, 7] = BLACK_BISHOP;
+        chessBoard[7, 2] = WHITE_BISHOP;
+        chessBoard[7, 5] = WHITE_BISHOP;
 
         //Knights
-        chessBoard[1, 7] = BLACK_KNIGHT;
-        chessBoard[6, 7] = BLACK_KNIGHT;
+        chessBoard[7, 1] = WHITE_KNIGHT;
+        chessBoard[7, 6] = WHITE_KNIGHT;
 
         //Pawns
         for (int i = 0; i < 8; i++)
         {
-            chessBoard[i, 6] = BLACK_PAWN;
+            chessBoard[6, i] = WHITE_PAWN;
         }
     }
 
@@ -178,17 +180,73 @@ public class BoardManager : MonoBehaviour
     {
         string FED = "";
         //game state to FED
-        for (int i = 7; i >= 0; i--)
+        for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                FED += chessBoard[j, i];
+                FED += chessBoard[i, j];
             }
             // we dont want the / after the last line
-            if (i > 0) { FED += '/'; }
+            if (i < 7) { FED += '/'; }
         }
         //whos turn it is and options Next Chess Move Needs (these dont change)
-        FED += " " + AIPlayer + " " + NEXTCHESSMOVE_OPTIONS;
+        FED += " " + AIPlayer;
         return FED;
+    }
+
+    public void EndTurn()
+    {
+        Debug.Log("Start End Turn");
+        string fed = ArrayToForsythEdwards(chessBoard);
+        WebRequest request;
+        WebResponse response;
+        Stream receiveStream;
+        Encoding encode;
+        StreamReader readStream;
+
+        request = WebRequest.Create(APIurlBest + fed);
+        request.Method = "GET";
+        response = request.GetResponse();
+        receiveStream = response.GetResponseStream();
+        encode = System.Text.Encoding.GetEncoding("utf-8");
+        readStream = new StreamReader(receiveStream, encode);
+
+        string move = readStream.ReadLine();
+        Debug.Log(fed);
+        if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+        {
+            Debug.Log(move);
+            int oldX = ChessPositionToInt[move[5]];
+            int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
+            int newX = ChessPositionToInt[move[7]];
+            int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
+            UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+        }
+        else
+        {
+            //TODO 
+            //this would be a win condition as there are no moves the ai player can make that
+            //result in favourable states
+        }
+    }
+
+    private void UpdateAndMoveActiveChessPieces(int oldX, int oldY, int newX, int newY)
+    {
+        //destroy chess piece if the move is a take move
+        if (chessBoard[7-newX, newY] != '1')
+        {
+            Destroy(activeChessPieces[((newX * 8) + newY)]);
+            Debug.Log("Hellp");
+        }
+
+        //move chessPieceInScene
+        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
+
+        //update the gamestate
+        chessBoard[7-newY, newX] = chessBoard[7-oldY, oldX];
+        chessBoard[7-oldY, oldX] = '1';
+
+        //move chess piece GameObjects in the 1d array
+        activeChessPieces[((newX * 8) + newY)] = activeChessPieces[((oldX * 8) + oldY)];
     }
 }
