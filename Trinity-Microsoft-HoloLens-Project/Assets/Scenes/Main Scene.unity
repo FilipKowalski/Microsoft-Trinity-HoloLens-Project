@@ -10043,6 +10043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720047457}
     m_Modifications:
+    - target: {fileID: 1592563772542313561, guid: 027a280457906a64aa8223f89eaac773, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 40736742}
     - target: {fileID: 6931196017462994529, guid: 027a280457906a64aa8223f89eaac773, type: 3}
       propertyPath: m_Name
       value: TableAnchor
