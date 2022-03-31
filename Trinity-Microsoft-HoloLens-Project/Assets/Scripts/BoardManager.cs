@@ -54,6 +54,29 @@ public class BoardManager : MonoBehaviour
     {
     }
 
+    public Dictionary<char, int> GetDictionary()
+    {
+        return ChessPositionToInt;
+    }
+
+    public float getTileOffset()
+    {
+        return TILE_OFFSET;
+    }
+
+    public float getTileSize()
+    {
+        return TILE_SIZE;
+    }
+
+    public char GetPiece(Vector3 oldPos)
+    {
+        int x = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        int y = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
+   
+        return chessBoard[x, y];
+    }
+
     private void Start()
     {
         InitialiseArray();
@@ -75,8 +98,8 @@ public class BoardManager : MonoBehaviour
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
         //get the indexes
-        int oldX = (int) ((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int oldY = (int) ((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
+        int oldX = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        int oldY = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
 
         int newX = (int) ((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
         int newY = (int) ((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
