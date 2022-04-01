@@ -194,6 +194,6 @@ public class PieceTriggerManager : MonoBehaviour
         int newX = (int)((newPos.x - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
         int newY = (int)((newPos.z - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
 
-        boardManager.activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * boardManager.getTileSize(), 0, (oldX - newX) * boardManager.getTileSize());
+        boardManager.activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((newY - oldY) * boardManager.getTileSize(), 0, (newX - oldX) * boardManager.getTileSize());
     }
 }
