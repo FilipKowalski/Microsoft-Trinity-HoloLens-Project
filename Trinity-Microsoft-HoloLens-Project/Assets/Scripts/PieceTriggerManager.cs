@@ -9,6 +9,7 @@ public class PieceTriggerManager : MonoBehaviour
     Vector3 newPos;
     int moveCount = 0;
 
+
     void Awake()
     {
         boardManager = GameObject.Find("GameBoard").GetComponent<BoardManager>();
@@ -20,14 +21,18 @@ public class PieceTriggerManager : MonoBehaviour
         newPos = trigger.transform.localPosition;
         if (oldPos != Vector3.zero && oldPos != newPos)
         {
-            if (ValidateMove(oldPos, newPos, boardManager.GetPiece(oldPos)))
+            if (ValidateMove(oldPos, newPos, boardManager.GetPiece(oldPos)) && boardManager.movesThisTurn < 1)
             {
                 //Check if captured and move
                 boardManager.UpdateArray(oldPos, newPos);
                 moveCount++;
+                boardManager.movesThisTurn++;
             }
             else
+            {
+                //TODO move piece back to original position if 
                 MovePiece(boardManager.GetPiece(oldPos), oldPos, newPos);
+            }
         }
     }
 
@@ -183,6 +188,12 @@ public class PieceTriggerManager : MonoBehaviour
     }
 
     private void MovePiece(char piece, Vector3 newPos, Vector3 oldPos) {
+        int oldX = (int)((oldPos.x - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
+        int oldY = (int)((oldPos.z - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
 
+        int newX = (int)((newPos.x - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
+        int newY = (int)((newPos.z - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
+
+        boardManager.activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((newY - oldY) * boardManager.getTileSize(), 0, (newX - oldX) * boardManager.getTileSize());
     }
 }
