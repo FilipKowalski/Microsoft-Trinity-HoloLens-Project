@@ -220,6 +220,11 @@ public class BoardManager : MonoBehaviour
 
     public void EndTurn()
     {
+        //reset moves taken
+        movesThisTurn = 0;
+
+        //TODO MAKE THIS FUNCTION ASYNC AND DESTROY STREAMREADER
+
         Debug.Log("Start End Turn");
         string fed = ArrayToForsythEdwards(chessBoard);
         WebRequest request;
