@@ -9,6 +9,7 @@ public class PieceTriggerManager : MonoBehaviour
     Vector3 newPos;
     int moveCount = 0;
 
+
     void Awake()
     {
         boardManager = GameObject.Find("GameBoard").GetComponent<BoardManager>();
@@ -20,14 +21,17 @@ public class PieceTriggerManager : MonoBehaviour
         newPos = trigger.transform.localPosition;
         if (oldPos != Vector3.zero && oldPos != newPos)
         {
-            if (ValidateMove(oldPos, newPos, boardManager.GetPiece(oldPos)))
+            if (ValidateMove(oldPos, newPos, boardManager.GetPiece(oldPos)) && boardManager.movesThisTurn < 1)
             {
                 //Check if captured and move
                 boardManager.UpdateArray(oldPos, newPos);
                 moveCount++;
             }
             else
+            {
+                //TODO move piece back to original position if 
                 MovePiece(boardManager.GetPiece(oldPos), oldPos, newPos);
+            }
         }
     }
 

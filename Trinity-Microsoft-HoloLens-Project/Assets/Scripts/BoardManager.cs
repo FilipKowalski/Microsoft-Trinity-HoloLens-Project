@@ -49,6 +49,7 @@ public class BoardManager : MonoBehaviour
     public List<Rigidbody> ChessRigidBodies;
     public List<Collider> ChessColliders;
     public Rigidbody board;
+    public int movesThisTurn = 0;
 
     private void Update()
     {
