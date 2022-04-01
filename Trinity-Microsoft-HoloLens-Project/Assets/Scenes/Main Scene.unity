@@ -600,7 +600,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -1920,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3164,7 +3164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.192
+      value: 5.2037735
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3172,7 +3172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.615
+      value: -0.7569487
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4414,7 +4414,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 804883249}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -4953,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.97
+      value: 3.6622634
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4961,7 +4961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: -0.77136564
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6042,7 +6042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.88
+      value: 3.737735
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6050,7 +6050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.89
+      value: 0.75693583
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6548,7 +6548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.235
+      value: 5.2452826
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6556,7 +6556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.915
+      value: 0.80342853
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7795,7 +7795,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1554115776}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8788,7 +8788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.806
+      value: 3.7396228
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8796,7 +8796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.005
+      value: -5.3279686
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8902,7 +8902,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1747725446}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10096,7 +10096,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1985303804}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:

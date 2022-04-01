@@ -43,13 +43,13 @@ public class BoardManager : MonoBehaviour
 
     private const int CHESSBOARD_SIZE = 8;
     private char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    private char[,] oldChessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
 
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
     public List<Collider> ChessColliders;
     public Rigidbody board;
-    public int movesThisTurn = 0;
 
     private void Update()
     {
@@ -198,6 +198,8 @@ public class BoardManager : MonoBehaviour
         {
             chessBoard[6, i] = WHITE_PAWN;
         }
+
+        oldChessBoard = chessBoard;
     }
 
     private string ArrayToForsythEdwards(char[,] chessBoard)
@@ -218,45 +220,238 @@ public class BoardManager : MonoBehaviour
         return FED;
     }
 
-    public void EndTurn()
+    public async void EndTurn()
     {
-        //reset moves taken
-        movesThisTurn = 0;
-
-        //TODO MAKE THIS FUNCTION ASYNC AND DESTROY STREAMREADER
-
+        oldChessBoard = chessBoard;
         Debug.Log("Start End Turn");
-        string fed = ArrayToForsythEdwards(chessBoard);
-        WebRequest request;
-        WebResponse response;
-        Stream receiveStream;
-        Encoding encode;
-        StreamReader readStream;
 
-        request = WebRequest.Create(APIurlBest + fed);
-        request.Method = "GET";
-        response = request.GetResponse();
-        receiveStream = response.GetResponseStream();
-        encode = System.Text.Encoding.GetEncoding("utf-8");
-        readStream = new StreamReader(receiveStream, encode);
+        if (Valid())
+        {
+            //TODO MAKE THIS FUNCTION ASYNC AND DESTROY STREAMREADER
 
-        string move = readStream.ReadLine();
-        Debug.Log(fed);
-        if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
-        {
-            Debug.Log(move);
-            int oldX = ChessPositionToInt[move[5]];
-            int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
-            int newX = ChessPositionToInt[move[7]];
-            int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
-            UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+            
+            string fed = ArrayToForsythEdwards(chessBoard);
+            WebRequest request;
+            WebResponse response;
+            Stream receiveStream;
+            Encoding encode;
+            StreamReader readStream;
+
+            request = WebRequest.Create(APIurlBest + fed);
+            request.Method = "GET";
+            response = await request.GetResponseAsync();
+            receiveStream = response.GetResponseStream();
+            encode = System.Text.Encoding.GetEncoding("utf-8");
+            readStream = new StreamReader(receiveStream, encode);
+
+            string move = readStream.ReadLine();
+            Debug.Log(fed);
+            if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+            {
+                Debug.Log(move);
+                int oldX = ChessPositionToInt[move[5]];
+                int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
+                int newX = ChessPositionToInt[move[7]];
+                int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
+                UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+            }
+            else
+            {
+                //TODO 
+                //this would be a win condition as there are no moves the ai player can make that
+                //result in favourable states
+            }
         }
-        else
+        Debug.Log("invalid");
+    }
+
+    bool Valid()
+    {
+        int changes = 0;
+        char pieceMoved = 'x';
+        int oldX = -1;
+        int oldY = -1;
+        int newX = -1;
+        int newY = -1;
+
+        for (int i = 0; i < CHESSBOARD_SIZE; i++)
+            for (int j = 0; j < CHESSBOARD_SIZE; j++)
+                if (oldChessBoard[i, j] != chessBoard[i, j]) {
+                    changes++;
+                    Debug.Log("Change Found");
+                    if (chessBoard[i, j] != 1)
+                    {
+                        newX = i; newY = j;
+                        pieceMoved = chessBoard[i, j];
+                    }
+                    else
+                    {
+                        oldX = i; oldY = j;
+                    }
+
+                }
+        Debug.Log(pieceMoved);
+        // i = row j = column 
+        if (changes > 2)
+            return false;
+
+        if(!ValidateMove(oldX, oldY, newX, newY, pieceMoved))
         {
-            //TODO 
-            //this would be a win condition as there are no moves the ai player can make that
-            //result in favourable states
+            MovePiece(oldX, oldY, newX, newY);
+            return false;
         }
+
+        return true;
+                
+    }
+
+    private void MovePiece(int oldY, int oldX, int newY, int newX)
+    {
+        Debug.Log(oldY);
+        //move chessPieceInScene
+        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
+        //move chess piece GameObjects in the 1d array
+        activeChessPieces[((newX * 8) + newY)] = activeChessPieces[((oldX * 8) + oldY)];
+    }
+
+
+    private bool ValidateMove(int oldX, int oldY, int newX, int newY, char Piece)
+    {
+
+        // private char EMPTY_SPACE = '1';
+        // private char BLACK_KING = 'k';
+        // private char BLACK_QUEEN = 'q';
+        // private char BLACK_ROOK = 'r';
+        // private char BLACK_BISHOP = 'b';
+        // private char BLACK_KNIGHT = 'n';
+        // private char BLACK_PAWN = 'p';
+        // private char WHITE_KING = 'K';
+        // private char WHITE_QUEEN = 'Q';
+        // private char WHITE_ROOK = 'R';
+        // private char WHITE_BISHOP = 'B';
+        // private char WHITE_KNIGHT = 'N';
+        // private char WHITE_PAWN = 'P';
+        switch (Piece)
+        {
+            case 'P':
+                if (oldY == 7 && (newX == oldX - 2 || newX == oldX - 1))
+                    return true;
+                else if (newX == oldX - 1)
+                    return true;
+                break;
+
+            case 'N':
+                if ((newX == oldX + 1 && (newY == oldY + 2 || newY == oldY - 2)) ||
+                    (newX == oldX + 2 && (newY == oldY + 1 || newY == oldY - 1)) ||
+                    (newX == oldX - 1 && (newY == oldY - 2 || newY == oldY + 2)) ||
+                    (newX == oldX - 2 && (newY == oldY - 1 || newY == oldY + 1)))
+                    return true;
+                break;
+
+            case 'B':
+                for (int i = 1; i <= 8; i++)
+                    if ((newX == oldX + i && newY == oldY + i) ||
+                       (newX == oldX + i && newY == oldY - i) ||
+                       (newX == oldX - i && newY == oldY + i) ||
+                       (newX == oldX - i && newY == oldY - i))
+                        return true;
+                break;
+
+            case 'R':
+                for (int i = 1; i <= 8; i++)
+                    if ((newX == oldX + i) ||
+                       (newX == oldX - i) ||
+                       (newY == oldY - i) ||
+                       (newY == oldY - i))
+                        return true;
+                break;
+
+            case 'Q':
+                for (int i = 1; i <= 8; i++)
+                    if (((newX == oldX + i && newY == oldY + i) ||
+                       (newX == oldX + i && newY == oldY - i) ||
+                       (newX == oldX - i && newY == oldY + i) ||
+                       (newX == oldX - i && newY == oldY - i)) ||
+                       ((newX == oldX + i) ||
+                       (newX == oldX - i) ||
+                       (newY == oldY - i) ||
+                       (newY == oldY - i)))
+                        return true;
+                break;
+
+            case 'K':
+                if (((newX == oldX + 1 && newY == oldY + 1) ||
+                       (newX == oldX + 1 && newY == oldY - 1) ||
+                       (newX == oldX - 1 && newY == oldY + 1) ||
+                       (newX == oldX - 1 && newY == oldY - 1)) ||
+                       ((newX == oldX + 1) ||
+                       (newX == oldX - 1) ||
+                       (newY == oldY - 1) ||
+                       (newY == oldY - 1)))
+                    return true;
+                break;
+
+            case 'p':
+                if (oldY == 1 && (newX == oldX + 2 || newX == oldX + 1))
+                    return true;
+                else if (newX == oldX + 1)
+                    return true;
+                break;
+
+            case 'n':
+                if ((newX == oldX + 1 && (newY == oldY + 2 || newY == oldY - 2)) ||
+                    (newX == oldX + 2 && (newY == oldY + 1 || newY == oldY - 1)) ||
+                    (newX == oldX - 1 && (newY == oldY - 2 || newY == oldY + 2)) ||
+                    (newX == oldX - 2 && (newY == oldY - 1 || newY == oldY + 1)))
+                    return true;
+                break;
+
+            case 'b':
+                for (int i = 1; i <= 8; i++)
+                    if ((newX == oldX + i && newY == oldY + i) ||
+                       (newX == oldX + i && newY == oldY - i) ||
+                       (newX == oldX - i && newY == oldY + i) ||
+                       (newX == oldX - i && newY == oldY - i))
+                        return true;
+                break;
+
+            case 'r':
+                for (int i = 1; i <= 8; i++)
+                    if ((newX == oldX + i) ||
+                       (newX == oldX - i) ||
+                       (newY == oldY - i) ||
+                       (newY == oldY - i))
+                        return true;
+                break;
+
+            case 'q':
+                for (int i = 1; i <= 8; i++)
+                    if (((newX == oldX + i && newY == oldY + i) ||
+                       (newX == oldX + i && newY == oldY - i) ||
+                       (newX == oldX - i && newY == oldY + i) ||
+                       (newX == oldX - i && newY == oldY - i)) ||
+                       ((newX == oldX + i) ||
+                       (newX == oldX - i) ||
+                       (newY == oldY - i) ||
+                       (newY == oldY - i)))
+                        return true;
+                break;
+
+            case 'k':
+                if (((newX == oldX + 1 && newY == oldY + 1) ||
+                       (newX == oldX + 1 && newY == oldY - 1) ||
+                       (newX == oldX - 1 && newY == oldY + 1) ||
+                       (newX == oldX - 1 && newY == oldY - 1)) ||
+                       ((newX == oldX + 1) ||
+                       (newX == oldX - 1) ||
+                       (newY == oldY - 1) ||
+                       (newY == oldY - 1)))
+                    return true;
+                break;
+
+        }
+        return false;
+
     }
 
     private void UpdateAndMoveActiveChessPieces(int oldX, int oldY, int newX, int newY)
