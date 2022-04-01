@@ -183,11 +183,6 @@ public class PieceTriggerManager : MonoBehaviour
     }
 
     private void MovePiece(char piece, Vector3 newPos, Vector3 oldPos) {
-        int oldX = boardManager.GetDictionary()[move[5]];
-        int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
-        int newX = ChessPositionToInt[move[7]];
-        int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
 
-        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
     }
 }
