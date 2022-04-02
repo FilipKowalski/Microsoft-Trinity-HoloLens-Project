@@ -29,8 +29,7 @@ public class BoardManager : MonoBehaviour
     private char WHITE = 'w';
     private char BLACK = 'b';
 
-    private string APIurlBest = "https://www.chessdb.cn/cdb.php?action=querybest&board=";
-    private string APIurlRandom = "https://www.chessdb.cn/cdb.php?action=querysearch&board=";
+    private string APIurlBest = "https://www.chessdb.cn/cdb.php?action=queryall&board=";
 
     Dictionary<char, int> ChessPositionToInt = new Dictionary<char, int>();
 
@@ -212,8 +211,8 @@ public class BoardManager : MonoBehaviour
         readStream = new StreamReader(receiveStream, encode);
 
         string move = readStream.ReadLine();
-        Debug.Log(fed);
-        if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+        Debug.Log(move);
+        if (!String.Equals("unknown", move, StringComparison.InvariantCultureIgnoreCase))
         {
             Debug.Log(move);
             int oldX = ChessPositionToInt[move[5]];
@@ -240,7 +239,7 @@ public class BoardManager : MonoBehaviour
         }
 
         //move chessPieceInScene
-        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
+        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (newX - oldX) * TILE_SIZE);
 
         //update the gamestate
         chessBoard[7-newY, newX] = chessBoard[7-oldY, oldX];
