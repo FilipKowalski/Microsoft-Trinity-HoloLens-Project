@@ -43,6 +43,7 @@ public class BoardManager : MonoBehaviour
 
     private const int CHESSBOARD_SIZE = 8;
     private char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    private char[,] chessBoardPrevTurn = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
 
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
@@ -174,6 +175,79 @@ public class BoardManager : MonoBehaviour
         {
             chessBoard[6, i] = WHITE_PAWN;
         }
+
+        //second array used for tracking before end turn and after
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                chessBoardPrevTurn[i, j] = chessBoard[i, j];
+            }
+        }
+    }
+
+    private bool validateMove()
+    {
+        int diff = 0;
+        // dictionary to store the indexes of the differences
+        List<int> diffIndexes = new List<int>();
+
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (chessBoard[i, j] != chessBoardPrevTurn[i, j])
+                {
+                    diff++;
+                    diffIndexes.Add(i);
+                    diffIndexes.Add(j);
+                }
+            }
+        }
+
+        //if more than 2 chess fields are different then more than 1 move has been taken, so return false
+        if (diff > 2)
+        {
+            MovePiecesBack(diffIndexes);
+            return false;
+        }
+
+        //check if the move is taken by the players colour
+        //if the move is taken by the colour of the ai we know that the wrong colour has been moved, therafore we return false
+        if (AIPlayer == 'w')
+        {
+            if ((Char.IsUpper(chessBoard[diffIndexes[0], diffIndexes[1]])) || (Char.IsUpper(chessBoard[diffIndexes[2], diffIndexes[3]])))
+            {
+                MovePiecesBack(diffIndexes);
+                return false;
+            }
+        }
+        else
+        {
+            if ((Char.IsLower(chessBoard[diffIndexes[0], diffIndexes[1]])) || (Char.IsLower(chessBoard[diffIndexes[2], diffIndexes[3]])))
+            {
+                MovePiecesBack(diffIndexes);
+                return false;
+            }
+        }
+
+        //now that we know only 1 move was taken and that the right colour was moved we can check the different pieces moves
+        //TODO FINISH THIS
+        return true;
+    }
+
+    //i wasnt sure how to move the pieces back in the end turn function so this function is called in the validateMove function, its a bit janky so 
+    //if you have an idea on how to move the pieces from the end turn function please change this
+    private void MovePiecesBack(List<int> diffIndexes)
+    {
+        for (int i = 0; i < diffIndexes.Count; i += 2)
+        {
+            if (chessBoard[diffIndexes[0], diffIndexes[1]] != '1')
+            {
+                //oldX = 2 oldy = 3 newx = 0 newy = 1
+                activeChessPieces[((7 - diffIndexes[i + 2]) * 8) + (7 - diffIndexes[i + 3])].transform.localPosition += new Vector3((diffIndexes[i + 3] - diffIndexes[i + 1]) * TILE_SIZE, 0, (diffIndexes[i + 2] - diffIndexes[i + 0]) * TILE_SIZE);
+            }
+        }
     }
 
     private string ArrayToForsythEdwards(char[,] chessBoard)
@@ -196,38 +270,42 @@ public class BoardManager : MonoBehaviour
 
     public async void EndTurn()
     {
-        Debug.Log("Start End Turn");
-        string fed = ArrayToForsythEdwards(chessBoard);
-        WebRequest request;
-        WebResponse response;
-        Stream receiveStream;
-        Encoding encode;
-        StreamReader readStream;
-
-        request = WebRequest.Create(APIurlBest + fed);
-        request.Method = "GET";
-        response = await request.GetResponseAsync();
-        receiveStream = response.GetResponseStream();
-        encode = System.Text.Encoding.GetEncoding("utf-8");
-        readStream = new StreamReader(receiveStream, encode);
-
-        string move = readStream.ReadLine();
-        Debug.Log(fed);
-        if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+        if (validateMove())
         {
-            Debug.Log(move);
-            int oldX = ChessPositionToInt[move[5]];
-            int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
-            int newX = ChessPositionToInt[move[7]];
-            int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
-            UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+            Debug.Log("Start End Turn");
+            string fed = ArrayToForsythEdwards(chessBoard);
+            WebRequest request;
+            WebResponse response;
+            Stream receiveStream;
+            Encoding encode;
+            StreamReader readStream;
+
+            request = WebRequest.Create(APIurlBest + fed);
+            request.Method = "GET";
+            response = await request.GetResponseAsync();
+            receiveStream = response.GetResponseStream();
+            encode = System.Text.Encoding.GetEncoding("utf-8");
+            readStream = new StreamReader(receiveStream, encode);
+
+            string move = readStream.ReadLine();
+            Debug.Log(fed);
+            if (!String.Equals("nobestmove", move, StringComparison.InvariantCultureIgnoreCase))
+            {
+                Debug.Log(move);
+                int oldX = ChessPositionToInt[move[5]];
+                int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
+                int newX = ChessPositionToInt[move[7]];
+                int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
+                UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+            }
+            else
+            {
+                //TODO 
+                //this would be a win condition as there are no moves the ai player can make that
+                //result in favourable states
+            }
         }
-        else
-        {
-            //TODO 
-            //this would be a win condition as there are no moves the ai player can make that
-            //result in favourable states
-        }
+
     }
 
     private void UpdateAndMoveActiveChessPieces(int oldX, int oldY, int newX, int newY)
