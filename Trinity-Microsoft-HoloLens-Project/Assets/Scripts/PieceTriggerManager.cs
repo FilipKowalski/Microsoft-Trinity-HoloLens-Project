@@ -31,7 +31,7 @@ public class PieceTriggerManager : MonoBehaviour
             else
             {
                 //TODO move piece back to original position if 
-                MovePiece(boardManager.GetPiece(oldPos), oldPos, newPos);
+                MovePiece(oldPos, newPos);
             }
         }
     }
@@ -187,13 +187,13 @@ public class PieceTriggerManager : MonoBehaviour
        
     }
 
-    private void MovePiece(char piece, Vector3 newPos, Vector3 oldPos) {
+    private void MovePiece(Vector3 newPos, Vector3 oldPos) {
         int oldX = (int)((oldPos.x - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
         int oldY = (int)((oldPos.z - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
 
         int newX = (int)((newPos.x - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
         int newY = (int)((newPos.z - boardManager.getTileOffset()) / boardManager.getTileSize() + 0.5);
 
-        boardManager.activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((newY - oldY) * boardManager.getTileSize(), 0, (newX - oldX) * boardManager.getTileSize());
+        this.transform.localPosition += new Vector3((newY - oldY) * boardManager.getTileSize(), 0, (newX - oldX) * boardManager.getTileSize());
     }
 }
