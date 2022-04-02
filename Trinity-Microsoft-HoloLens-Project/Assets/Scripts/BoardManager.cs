@@ -5,6 +5,7 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoardManager : MonoBehaviour
 {
@@ -222,14 +223,13 @@ public class BoardManager : MonoBehaviour
 
     public async void EndTurn()
     {
-        oldChessBoard = chessBoard;
         Debug.Log("Start End Turn");
 
         if (Valid())
         {
             //TODO MAKE THIS FUNCTION ASYNC AND DESTROY STREAMREADER
 
-            
+
             string fed = ArrayToForsythEdwards(chessBoard);
             WebRequest request;
             WebResponse response;
@@ -254,6 +254,7 @@ public class BoardManager : MonoBehaviour
                 int newX = ChessPositionToInt[move[7]];
                 int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
                 UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
+                oldChessBoard = chessBoard;
             }
             else
             {
@@ -262,13 +263,18 @@ public class BoardManager : MonoBehaviour
                 //result in favourable states
             }
         }
-        Debug.Log("invalid");
+        else
+        {
+            Debug.Log("invalid");
+        }
     }
+
 
     bool Valid()
     {
         int changes = 0;
         char pieceMoved = 'x';
+        char pieceTaken = '1';
         int oldX = -1;
         int oldY = -1;
         int newX = -1;
@@ -283,6 +289,7 @@ public class BoardManager : MonoBehaviour
                     {
                         newX = i; newY = j;
                         pieceMoved = chessBoard[i, j];
+                        pieceTaken = oldChessBoard[i, j];
                     }
                     else
                     {
@@ -290,16 +297,31 @@ public class BoardManager : MonoBehaviour
                     }
 
                 }
-        Debug.Log(pieceMoved);
-        // i = row j = column 
-        if (changes > 2)
-            return false;
 
-        if(!ValidateMove(oldX, oldY, newX, newY, pieceMoved))
+        Debug.Log(pieceMoved);
+        Debug.Log(pieceTaken);
+        // i = row j = column 
+        //if (changes > 2)
+            //return false;
+
+        if(pieceTaken != '1')
         {
-            MovePiece(oldX, oldY, newX, newY);
-            return false;
+            if(pieceTaken == 'K')
+            {
+                //Player Win
+                SceneManager.LoadScene("PlayerWin");
+            }
+            else
+            {
+                Destroy(activeChessPieces[((oldX * 8) + oldY)]);
+            }
         }
+
+        Debug.Log(ValidateMove(oldX, oldY, newX, newY, pieceMoved));
+        //{
+        //    MovePiece(oldX, oldY, newX, newY);
+        //   return false;
+        //}
 
         return true;
                 
