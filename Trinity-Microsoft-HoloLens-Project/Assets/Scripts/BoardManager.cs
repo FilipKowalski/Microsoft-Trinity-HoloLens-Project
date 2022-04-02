@@ -194,7 +194,7 @@ public class BoardManager : MonoBehaviour
         return FED;
     }
 
-    public void EndTurn()
+    public async void EndTurn()
     {
         Debug.Log("Start End Turn");
         string fed = ArrayToForsythEdwards(chessBoard);
@@ -206,7 +206,7 @@ public class BoardManager : MonoBehaviour
 
         request = WebRequest.Create(APIurlBest + fed);
         request.Method = "GET";
-        response = request.GetResponse();
+        response = await request.GetResponseAsync();
         receiveStream = response.GetResponseStream();
         encode = System.Text.Encoding.GetEncoding("utf-8");
         readStream = new StreamReader(receiveStream, encode);
