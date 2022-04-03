@@ -45,12 +45,16 @@ public class BoardManager : MonoBehaviour
     private const int CHESSBOARD_SIZE = 8;
     private char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
     private char[,] oldChessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
-
+    private GameObject[,] gameObjects = new GameObject[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
     public List<Collider> ChessColliders;
     public Rigidbody board;
+
+    public GameObject pieceMoved;
+    public GameObject pieceTaken;
+    private int oldX, oldY, newX, newY;
 
     private void Update()
     {
@@ -100,14 +104,27 @@ public class BoardManager : MonoBehaviour
     public void UpdateArray(Vector3 oldPos, Vector3 newPos)
     {
         //get the indexes
-        int oldX = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int oldY = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
+        oldY = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        oldX = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
 
-        int newX = (int) ((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int newY = (int) ((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
+        newY = (int) ((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
+        newX = (int) ((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
 
-        chessBoard[newX, newY] = chessBoard[oldX, oldY];
+        chessBoard[newX, newY] = pieceMoved.tag.ToCharArray()[0];
         chessBoard[oldX, oldY] = EMPTY_SPACE;
+
+        //ToDo
+        // Check if pice taken and update
+        if (gameObjects[newX, newY].tag.ToCharArray()[0] != 1)
+            pieceTaken = gameObjects[newX, newY];
+
+        gameObjects[newX, newY] = pieceMoved;
+        gameObjects[oldX, oldY] = null;
+
+
+        Debug.Log(oldX); Debug.Log(oldY); Debug.Log(newX); Debug.Log(newY);
+        if (gameObjects[newX, newY] != null)
+        Debug.Log(gameObjects[newX, newY].tag);
     }
     
     public void ToggleKinematic()
@@ -200,7 +217,25 @@ public class BoardManager : MonoBehaviour
             chessBoard[6, i] = WHITE_PAWN;
         }
 
-        oldChessBoard = chessBoard;
+        CopyArray(oldChessBoard, chessBoard);
+
+        int columnCount = 0;
+        int rowCount = 7;
+        for (int i = 0; i < CHESSBOARD_SIZE * CHESSBOARD_SIZE; i++)
+        {
+            if (i % 7 == 0 && i != 0) {
+            columnCount++;
+            rowCount = 7;
+            }
+            gameObjects[rowCount--, columnCount] = activeChessPieces[i]; 
+        }
+    }
+
+    void CopyArray(char[,] arr1, char[,] arr2)
+    {
+        for (int i = 0; i < CHESSBOARD_SIZE; i++)
+            for (int j = 0; j < CHESSBOARD_SIZE; j++)
+                arr1[i, j] = arr2[i, j];
     }
 
     private string ArrayToForsythEdwards(char[,] chessBoard)
@@ -254,7 +289,7 @@ public class BoardManager : MonoBehaviour
                 int newX = ChessPositionToInt[move[7]];
                 int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
                 UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
-                oldChessBoard = chessBoard;
+                CopyArray(oldChessBoard, chessBoard);
             }
             else
             {
@@ -272,58 +307,24 @@ public class BoardManager : MonoBehaviour
 
     bool Valid()
     {
-        int changes = 0;
-        char pieceMoved = 'x';
-        char pieceTaken = '1';
-        int oldX = -1;
-        int oldY = -1;
-        int newX = -1;
-        int newY = -1;
-
-        for (int i = 0; i < CHESSBOARD_SIZE; i++)
-            for (int j = 0; j < CHESSBOARD_SIZE; j++)
-                if (oldChessBoard[i, j] != chessBoard[i, j]) {
-                    changes++;
-                    Debug.Log("Change Found");
-                    if (chessBoard[i, j] != 1)
-                    {
-                        newX = i; newY = j;
-                        pieceMoved = chessBoard[i, j];
-                        pieceTaken = oldChessBoard[i, j];
-                    }
-                    else
-                    {
-                        oldX = i; oldY = j;
-                    }
-
-                }
-
-        Debug.Log(pieceMoved);
-        Debug.Log(pieceTaken);
-        // i = row j = column 
-        //if (changes > 2)
-            //return false;
-
-        if(pieceTaken != '1')
+        if (ValidateMove())
         {
-            if(pieceTaken == 'K')
+            if (pieceTaken.tag.ToCharArray()[0] == 'K')
             {
                 //Player Win
                 SceneManager.LoadScene("PlayerWin");
             }
             else
             {
-                Destroy(activeChessPieces[((oldX * 8) + oldY)]);
+                // Replace with piece where pieceMoved is
+                Destroy(pieceTaken);
             }
+            return true;
         }
 
-        Debug.Log(ValidateMove(oldX, oldY, newX, newY, pieceMoved));
-        //{
-        //    MovePiece(oldX, oldY, newX, newY);
-        //   return false;
-        //}
+        
 
-        return true;
+        return false;
                 
     }
 
@@ -337,7 +338,7 @@ public class BoardManager : MonoBehaviour
     }
 
 
-    private bool ValidateMove(int oldX, int oldY, int newX, int newY, char Piece)
+    private bool ValidateMove()
     {
 
         // private char EMPTY_SPACE = '1';
@@ -353,7 +354,9 @@ public class BoardManager : MonoBehaviour
         // private char WHITE_BISHOP = 'B';
         // private char WHITE_KNIGHT = 'N';
         // private char WHITE_PAWN = 'P';
-        switch (Piece)
+        char piece = pieceMoved.tag.ToCharArray()[0];
+
+        switch (piece)
         {
             case 'P':
                 if (oldY == 7 && (newX == oldX - 2 || newX == oldX - 1))

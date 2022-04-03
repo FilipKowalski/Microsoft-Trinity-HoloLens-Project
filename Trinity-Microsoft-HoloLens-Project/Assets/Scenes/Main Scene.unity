@@ -723,7 +723,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 65895738}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -944,6 +944,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_TagString
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_RootOrder
@@ -1315,6 +1319,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -1523,7 +1531,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 227627457}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -1595,6 +1603,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_TagString
+      value: b
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_RootOrder
@@ -1831,6 +1843,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -2233,7 +2249,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 368884007}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -2482,6 +2498,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_TagString
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2555,6 +2575,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -2680,7 +2704,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 491327968}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -2803,7 +2827,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -2875,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -2950,6 +2978,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_TagString
+      value: B
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -3016,7 +3048,7 @@ GameObject:
   - component: {fileID: 549738905}
   m_Layer: 0
   m_Name: BoardTriggers
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3158,6 +3190,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+      propertyPath: m_TagString
+      value: Q
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3278,7 +3314,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3568,7 +3604,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 491327968}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3729,6 +3765,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3846,6 +3886,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_TagString
+      value: n
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_RootOrder
@@ -4008,6 +4052,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_TagString
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_RootOrder
@@ -4290,6 +4338,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_TagString
+      value: n
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4414,7 +4466,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 804883249}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -4665,6 +4717,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -4947,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -5105,6 +5165,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5173,6 +5237,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -5247,6 +5315,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -5368,7 +5440,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 961061154}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -5683,7 +5755,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1013146366}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -5888,6 +5960,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+      propertyPath: m_TagString
+      value: k
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5962,6 +6038,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+      propertyPath: m_TagString
+      value: q
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6035,6 +6115,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -6542,6 +6626,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 763435837405bc24691af77936be360b, type: 3}
+      propertyPath: m_TagString
+      value: K
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -6655,6 +6743,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_TagString
+      value: b
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_RootOrder
@@ -6921,6 +7013,7 @@ MonoBehaviour:
   - {fileID: 175396571}
   - {fileID: 1729579511}
   board: {fileID: 0}
+  pieceMoved: {fileID: 0}
 --- !u!75 &1300234555
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -7141,7 +7234,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 491327968}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7338,7 +7431,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1438173178}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7628,7 +7721,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1490366326}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7918,7 +8011,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1571222894}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7990,6 +8083,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -8111,7 +8208,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1616191388}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8322,7 +8419,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 491327968}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8665,7 +8762,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 227627457}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8781,6 +8878,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -9019,6 +9120,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_TagString
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -9133,6 +9238,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -9210,6 +9319,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -9642,6 +9755,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_TagString
+      value: N
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -9806,7 +9923,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1936327395}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -9929,7 +10046,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1973073827}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10260,6 +10377,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_TagString
+      value: N
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -10329,6 +10450,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -10542,7 +10667,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 61110335}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10614,6 +10739,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c61872173bf5220469786c549644854f, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_TagString
+      value: r
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
       propertyPath: m_RootOrder
@@ -10739,7 +10868,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 2103990814}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
