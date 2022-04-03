@@ -87,6 +87,7 @@ public class BoardManager : MonoBehaviour
     {
         InitialiseArray();
         CreateDictionary();
+        PieceCollideToggle();
     }
 
     private void CreateDictionary()
@@ -101,11 +102,16 @@ public class BoardManager : MonoBehaviour
         ChessPositionToInt.Add('h', 7);
     }
 
-    public void UpdateArray(Vector3 oldPos, Vector3 newPos)
+    public void UpdateArray(Vector3 newPos)
     {
-        //get the indexes
-        oldY = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        oldX = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
+        for (int i = 0; i < CHESSBOARD_SIZE; i++)
+            for (int j = 0; j < CHESSBOARD_SIZE; j++)
+                if (gameObjects[i, j].Equals(pieceMoved))
+                {
+                    oldX = i;
+                    oldY = j;
+                }
+
 
         newY = (int) ((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
         newX = (int) ((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
