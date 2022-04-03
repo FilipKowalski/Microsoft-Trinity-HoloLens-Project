@@ -301,6 +301,8 @@ public class BoardManager : MonoBehaviour
         else
         {
             Debug.Log("invalid");
+            //ToDo
+            // Move piece back to oldPos
         }
     }
 
@@ -318,11 +320,12 @@ public class BoardManager : MonoBehaviour
             {
                 // Replace with piece where pieceMoved is
                 Destroy(pieceTaken);
+
+                //ToDo
+                // Track destroyed items for pawn respawn
             }
             return true;
         }
-
-        
 
         return false;
                 
