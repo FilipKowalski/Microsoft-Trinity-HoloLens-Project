@@ -552,6 +552,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &61110330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61110328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &61110331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61110328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &61110332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -604,10 +632,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 61110330}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 61110330}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -680,6 +732,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &65895734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65895731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &65895735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65895731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &65895736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -723,14 +803,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 65895738}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65895734}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65895734}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -997,6 +1101,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!64 &157649360 stripped
@@ -1090,6 +1198,10 @@ PrefabInstance:
     - target: {fileID: 7372034969605610870, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: m_Name
       value: CompressableButtonToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372034969605610870, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7372034969605610871, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: states.Array.data[0].eventConfiguration.OnStateOn.m_PersistentCalls.m_Calls.Array.size
@@ -1371,6 +1483,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &175396571 stripped
@@ -1488,6 +1604,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &227627453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227627450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &227627454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227627450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &227627455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1531,14 +1675,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 227627457}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227627453}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227627453}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1660,6 +1828,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
 --- !u!1 &280207938 stripped
@@ -1727,7 +1899,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 280207945}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -1900,6 +2072,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &319580870 stripped
@@ -1936,15 +2112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08
+      value: 0.000000007450581
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43019998
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.12
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2249,7 +2425,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 368884007}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -2554,6 +2730,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!64 &458850259 stripped
@@ -2632,6 +2812,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &481871472 stripped
@@ -2704,7 +2888,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 491327968}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -2779,6 +2963,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &508508184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508508182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &508508185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508508182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &508508186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -2827,14 +3039,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508508184}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508508184}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2956,6 +3192,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &511484865 stripped
@@ -3030,6 +3270,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!64 &521605542 stripped
@@ -3061,7 +3305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549738904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.09944, y: 0.9773581, z: -6.09944}
+  m_LocalPosition: {x: -6.09944, y: 1, z: -6.09944}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 1729202651}
@@ -3242,6 +3486,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
 --- !u!64 &590099607 stripped
@@ -3249,6 +3497,36 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 6400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
   m_PrefabInstance: {fileID: 590099606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &607607001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607607002}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &607607002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607607001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4222533, y: -8.574684, z: 17.541723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614437573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -3266,6 +3544,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &614437575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614437573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &614437576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614437573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &614437577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -3314,14 +3620,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614437575}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614437575}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3437,7 +3767,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 623124373}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3604,7 +3934,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 491327968}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3821,6 +4151,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &688847954 stripped
@@ -3942,6 +4276,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
@@ -4105,6 +4443,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
 --- !u!64 &765475694 stripped
@@ -4265,7 +4607,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 794611480}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -4394,6 +4736,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
 --- !u!64 &802458780 stripped
@@ -4418,6 +4764,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &804883244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804883242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &804883245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804883242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &804883246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4466,14 +4840,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 804883244}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 804883244}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -4770,6 +5168,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &827677741 stripped
@@ -4838,6 +5240,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &859750555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859750553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &859750557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4886,14 +5302,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 859750560}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 859750555}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 859750555}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5054,6 +5494,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -5221,6 +5665,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1001 &914082019
@@ -5293,6 +5741,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -5368,6 +5820,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &960548298 stripped
@@ -5440,7 +5896,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 961061154}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -5588,6 +6044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndTurnButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4093808206373223125, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4093808206858475129, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5712,6 +6172,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1013146362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013146359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1013146363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013146359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1013146364
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5755,14 +6243,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1013146366}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013146362}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013146362}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6016,6 +6528,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
 --- !u!64 &1098549726 stripped
@@ -6094,6 +6610,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
 --- !u!64 &1100307532 stripped
@@ -6126,7 +6646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.737735
+      value: 3.77
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6134,7 +6654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.75693583
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6167,6 +6687,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -6240,7 +6764,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1135475624}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -6678,6 +7202,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 763435837405bc24691af77936be360b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763435837405bc24691af77936be360b, type: 3}
 --- !u!64 &1184812008 stripped
@@ -6800,6 +7328,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
 --- !u!64 &1236584007 stripped
@@ -6868,6 +7400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacdc34774434ed4db5421e6cf7bee66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EMPTY_SPACE: 49
+  APIurlBest: https://www.chessdb.cn/cdb.php?action=queryall&board=
   chessPiecePrefabs:
   - {fileID: 130826, guid: 861e95a585868b643bf2e4a1d0ae63b7, type: 3}
   - {fileID: 184594, guid: 1f7a3b3d104b8e44cb39f5356ae1d0bb, type: 3}
@@ -7014,6 +7548,74 @@ MonoBehaviour:
   - {fileID: 1729579511}
   board: {fileID: 0}
   pieceMoved: {fileID: 0}
+  pieceTaken: {fileID: 0}
+  empty: {fileID: 607607001}
+  triggers:
+  - {fileID: 1729202650}
+  - {fileID: 1833234890}
+  - {fileID: 1135534070}
+  - {fileID: 1166260647}
+  - {fileID: 1778485063}
+  - {fileID: 1030138186}
+  - {fileID: 426004253}
+  - {fileID: 449263291}
+  - {fileID: 1989705943}
+  - {fileID: 1419721323}
+  - {fileID: 60424818}
+  - {fileID: 667206421}
+  - {fileID: 1194692350}
+  - {fileID: 850117122}
+  - {fileID: 863863217}
+  - {fileID: 1026813245}
+  - {fileID: 754241576}
+  - {fileID: 644208517}
+  - {fileID: 49585906}
+  - {fileID: 1618884606}
+  - {fileID: 1618986592}
+  - {fileID: 879155222}
+  - {fileID: 1661905101}
+  - {fileID: 1842974593}
+  - {fileID: 1870991884}
+  - {fileID: 448320176}
+  - {fileID: 283277343}
+  - {fileID: 1920259931}
+  - {fileID: 1514059087}
+  - {fileID: 1139145377}
+  - {fileID: 1369684289}
+  - {fileID: 1808435964}
+  - {fileID: 1878195931}
+  - {fileID: 1027839107}
+  - {fileID: 669279981}
+  - {fileID: 170860639}
+  - {fileID: 725880450}
+  - {fileID: 907826215}
+  - {fileID: 1849466454}
+  - {fileID: 1654010732}
+  - {fileID: 59282589}
+  - {fileID: 1648529969}
+  - {fileID: 793014024}
+  - {fileID: 701508147}
+  - {fileID: 773052711}
+  - {fileID: 1759423268}
+  - {fileID: 223255833}
+  - {fileID: 143820201}
+  - {fileID: 1672458576}
+  - {fileID: 1184307016}
+  - {fileID: 1412666964}
+  - {fileID: 1839399084}
+  - {fileID: 2057493751}
+  - {fileID: 1173783909}
+  - {fileID: 181439261}
+  - {fileID: 1628325821}
+  - {fileID: 1974633244}
+  - {fileID: 2045446380}
+  - {fileID: 555541999}
+  - {fileID: 399467412}
+  - {fileID: 1834150084}
+  - {fileID: 1465703434}
+  - {fileID: 100877639}
+  - {fileID: 1268773953}
+  pos: 
 --- !u!75 &1300234555
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -7234,7 +7836,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 491327968}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7431,7 +8033,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1438173178}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7678,6 +8280,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1490366322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490366319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1490366323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490366319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1490366324
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7721,14 +8351,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1490366326}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490366322}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490366322}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7845,6 +8499,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1554115772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554115769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1554115773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554115769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1554115774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7888,14 +8570,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1554115776}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1554115772}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1554115772}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8011,7 +8717,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1571222894}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8136,6 +8842,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &1582407438 stripped
@@ -8160,6 +8870,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1616191383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616191381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1616191384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616191381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1616191385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
@@ -8208,14 +8946,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1616191388}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616191383}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616191383}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8419,7 +9181,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 491327968}
+  constraintsManager: {fileID: 1621862842}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -8719,6 +9481,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1719017665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719017662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1719017666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719017662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1719017667
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8762,14 +9552,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 227627457}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719017665}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719017665}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8931,6 +9745,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &1729579511 stripped
@@ -8960,6 +9778,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1747725442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747725439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1747725443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747725439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1747725444
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9003,14 +9849,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1747725446}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1747725442}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1747725442}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -9172,6 +10042,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
 --- !u!64 &1767244263 stripped
@@ -9294,6 +10168,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &1784613848 stripped
@@ -9375,6 +10253,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -9807,6 +10689,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
 --- !u!64 &1912441162 stripped
@@ -9875,6 +10761,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1936327390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936327388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1936327391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936327388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1936327392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -9923,14 +10837,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936327390}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936327390}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10046,7 +10984,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1973073827}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -10165,6 +11103,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1985303799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985303797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1985303800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985303797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1985303801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -10213,14 +11179,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1985303804}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985303799}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985303799}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10429,6 +11419,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
 --- !u!64 &2024392592 stripped
@@ -10506,6 +11500,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -10624,6 +11622,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2077135255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077135252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
+--- !u!114 &2077135256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077135252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &2077135257
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10667,14 +11693,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 61110335}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2077135255}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2077135255}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10796,6 +11846,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!64 &2090075094 stripped
@@ -10868,7 +11922,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 2103990814}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
