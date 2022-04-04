@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,18 +320,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
   m_PrefabInstance: {fileID: 722384552}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &52078567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52078565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &52078570
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -353,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52078565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -410,7 +398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52078565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -540,7 +528,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 1130979151}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &61110329
+--- !u!114 &61110330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,9 +537,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 61110328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &61110332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -604,10 +594,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 61110330}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 61110330}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -668,7 +682,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
   m_PrefabInstance: {fileID: 1912441161}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &65895733
+--- !u!114 &65895734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -677,9 +691,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 65895731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &65895736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -727,10 +743,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65895734}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65895734}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -945,6 +985,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_TagString
+      value: B
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -992,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
@@ -1086,6 +1134,10 @@ PrefabInstance:
     - target: {fileID: 7372034969605610870, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: m_Name
       value: CompressableButtonToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372034969605610870, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7372034969605610871, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: states.Array.data[0].eventConfiguration.OnStateOn.m_PersistentCalls.m_Calls.Array.size
@@ -1243,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372034971198921623, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7372034971198921623, guid: 92195f9c5fa2a794fb2973255c7fd874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1315,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -1362,6 +1418,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -1468,7 +1528,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
   m_PrefabInstance: {fileID: 765475693}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &227627452
+--- !u!114 &227627453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1477,9 +1537,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 227627450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &227627455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1527,10 +1589,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227627453}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227627453}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1596,6 +1682,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_TagString
+      value: b
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1648,6 +1738,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
 --- !u!1 &280207938 stripped
@@ -1660,18 +1754,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
   m_PrefabInstance: {fileID: 802458779}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &280207940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280207938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &280207943
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1693,7 +1775,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280207938}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -1715,7 +1797,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 280207945}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -1750,7 +1832,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280207938}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -1832,6 +1914,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1884,6 +1970,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &319580870 stripped
@@ -1920,15 +2010,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.000000007450581
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43019998
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.12
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 487252, guid: 31270e9f38d5e7a448ae050b9633fce3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2178,18 +2268,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
   m_PrefabInstance: {fileID: 261515280}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &368884002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368884000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &368884005
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2211,7 +2289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368884000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -2268,7 +2346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368884000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -2482,6 +2560,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_TagString
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2534,6 +2616,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!64 &458850259 stripped
@@ -2555,6 +2641,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -2608,6 +2698,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &481871472 stripped
@@ -2625,18 +2719,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 688847953}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &491327963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491327961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &491327966
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2658,7 +2740,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491327961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -2715,7 +2797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491327961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -2743,7 +2825,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 175396570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &508508183
+--- !u!114 &508508184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2752,9 +2834,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 508508182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &508508186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -2807,10 +2891,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508508184}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508508184}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2876,6 +2984,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2928,6 +3040,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &511484865 stripped
@@ -2949,6 +3065,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_TagString
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       propertyPath: m_RootOrder
@@ -2998,6 +3118,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!64 &521605542 stripped
@@ -3016,7 +3140,7 @@ GameObject:
   - component: {fileID: 549738905}
   m_Layer: 0
   m_Name: BoardTriggers
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3030,7 +3154,7 @@ Transform:
   m_GameObject: {fileID: 549738904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.09944, y: 0, z: -6.09944}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 1729202651}
   - {fileID: 1833234891}
@@ -3158,13 +3282,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+      propertyPath: m_TagString
+      value: Q
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.192
+      value: 5.2037735
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3172,7 +3300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.615
+      value: -0.7569487
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3206,6 +3334,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
 --- !u!64 &590099607 stripped
@@ -3213,12 +3345,42 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 6400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
   m_PrefabInstance: {fileID: 590099606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &607607001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607607002}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &607607002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607607001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4222533, y: -8.574684, z: 17.541723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614437573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 960548297}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &614437574
+--- !u!114 &614437575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3227,9 +3389,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 614437573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &614437577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -3282,10 +3446,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614437575}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614437575}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3346,18 +3534,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
   m_PrefabInstance: {fileID: 2090075093}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &623124368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623124366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &623124371
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3379,7 +3555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623124366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -3401,7 +3577,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 623124373}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -3436,7 +3612,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623124366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -3513,18 +3689,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 1784613847}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &647798390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647798388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &647798393
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3546,7 +3710,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647798388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -3603,7 +3767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647798388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -3729,6 +3893,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3780,6 +3948,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -3847,6 +4019,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_TagString
+      value: n
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3898,6 +4074,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
@@ -4009,6 +4189,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_TagString
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -4056,6 +4240,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
@@ -4162,18 +4350,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
   m_PrefabInstance: {fileID: 1100307531}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &794611475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794611473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &794611478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4195,7 +4371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794611473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -4252,7 +4428,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794611473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -4289,6 +4465,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_TagString
+      value: n
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
       propertyPath: m_RootOrder
@@ -4342,6 +4522,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
 --- !u!64 &802458780 stripped
@@ -4354,7 +4538,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 865553651}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &804883243
+--- !u!114 &804883244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4363,9 +4547,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 804883242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &804883246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4418,10 +4604,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 804883244}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 804883244}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -4666,6 +4876,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -4713,6 +4927,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4770,7 +4988,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 914082019}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &859750554
+--- !u!114 &859750555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4779,9 +4997,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 859750553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &859750557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -4834,10 +5054,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 859750555}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 859750555}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -4947,13 +5191,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.97
+      value: 3.6622634
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4961,7 +5209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.77
+      value: -0.77136564
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4994,6 +5242,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -5105,6 +5357,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5157,6 +5413,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1001 &914082019
@@ -5173,6 +5433,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -5226,6 +5490,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &914082020 stripped
@@ -5247,6 +5515,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -5296,6 +5568,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &960548298 stripped
@@ -5313,18 +5589,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 1793697734}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &961061149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961061147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &961061152
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5346,7 +5610,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961061147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -5403,7 +5667,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961061147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -5455,7 +5719,7 @@ Transform:
   m_Children:
   - {fileID: 40736743}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -5, z: 0}
 --- !u!1001 &979195936
 PrefabInstance:
@@ -5516,13 +5780,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndTurnButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4093808206373223125, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4093808206858475129, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalScale.x
@@ -5538,7 +5806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5305001
+      value: 0.6424
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5546,7 +5814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8598042
+      value: 1.8934
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5628,7 +5896,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
   m_PrefabInstance: {fileID: 2024392591}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1013146361
+--- !u!114 &1013146362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5637,9 +5905,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013146359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1013146364
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5687,10 +5957,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013146362}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013146362}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5888,6 +6182,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+      propertyPath: m_TagString
+      value: k
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5940,6 +6238,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
 --- !u!64 &1098549726 stripped
@@ -5961,6 +6263,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+      propertyPath: m_TagString
+      value: q
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
       propertyPath: m_RootOrder
@@ -6014,6 +6320,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
 --- !u!64 &1100307532 stripped
@@ -6036,13 +6346,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.88
+      value: 3.77
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6050,7 +6364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.89
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6084,6 +6398,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &1130979152 stripped
@@ -6096,18 +6414,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 2028381237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1135475618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135475617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1135475621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -6134,7 +6440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135475617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -6156,7 +6462,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1135475624}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -6191,7 +6497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135475617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -6542,21 +6848,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 763435837405bc24691af77936be360b, type: 3}
+      propertyPath: m_TagString
+      value: K
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.235
+      value: 5.2452826
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00077373575
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.915
+      value: 0.80342853
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6589,6 +6899,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 763435837405bc24691af77936be360b, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 763435837405bc24691af77936be360b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763435837405bc24691af77936be360b, type: 3}
@@ -6656,6 +6970,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_TagString
+      value: b
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6707,6 +7025,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
@@ -6776,6 +7098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacdc34774434ed4db5421e6cf7bee66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EMPTY_SPACE: 49
+  APIurlBest: https://www.chessdb.cn/cdb.php?action=queryall&board=
   chessPiecePrefabs:
   - {fileID: 130826, guid: 861e95a585868b643bf2e4a1d0ae63b7, type: 3}
   - {fileID: 184594, guid: 1f7a3b3d104b8e44cb39f5356ae1d0bb, type: 3}
@@ -6921,6 +7245,74 @@ MonoBehaviour:
   - {fileID: 175396571}
   - {fileID: 1729579511}
   board: {fileID: 0}
+  pieceTaken: {fileID: 0}
+  empty: {fileID: 607607001}
+  triggers:
+  - {fileID: 1729202650}
+  - {fileID: 1833234890}
+  - {fileID: 1135534070}
+  - {fileID: 1166260647}
+  - {fileID: 1778485063}
+  - {fileID: 1030138186}
+  - {fileID: 426004253}
+  - {fileID: 449263291}
+  - {fileID: 1989705943}
+  - {fileID: 1419721323}
+  - {fileID: 60424818}
+  - {fileID: 667206421}
+  - {fileID: 1194692350}
+  - {fileID: 850117122}
+  - {fileID: 863863217}
+  - {fileID: 1026813245}
+  - {fileID: 754241576}
+  - {fileID: 644208517}
+  - {fileID: 49585906}
+  - {fileID: 1618884606}
+  - {fileID: 1618986592}
+  - {fileID: 879155222}
+  - {fileID: 1661905101}
+  - {fileID: 1842974593}
+  - {fileID: 1870991884}
+  - {fileID: 448320176}
+  - {fileID: 283277343}
+  - {fileID: 1920259931}
+  - {fileID: 1514059087}
+  - {fileID: 1139145377}
+  - {fileID: 1369684289}
+  - {fileID: 1808435964}
+  - {fileID: 1878195931}
+  - {fileID: 1027839107}
+  - {fileID: 669279981}
+  - {fileID: 170860639}
+  - {fileID: 725880450}
+  - {fileID: 907826215}
+  - {fileID: 1849466454}
+  - {fileID: 1654010732}
+  - {fileID: 59282589}
+  - {fileID: 1648529969}
+  - {fileID: 793014024}
+  - {fileID: 701508147}
+  - {fileID: 773052711}
+  - {fileID: 1759423268}
+  - {fileID: 223255833}
+  - {fileID: 143820201}
+  - {fileID: 1672458576}
+  - {fileID: 1184307016}
+  - {fileID: 1412666964}
+  - {fileID: 1839399084}
+  - {fileID: 2057493751}
+  - {fileID: 1173783909}
+  - {fileID: 181439261}
+  - {fileID: 1628325821}
+  - {fileID: 1974633244}
+  - {fileID: 2045446380}
+  - {fileID: 555541999}
+  - {fileID: 399467412}
+  - {fileID: 1834150084}
+  - {fileID: 1465703434}
+  - {fileID: 100877639}
+  - {fileID: 1268773953}
+  pos: 
 --- !u!75 &1300234555
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -7072,18 +7464,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 511484864}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1383135969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383135967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1383135972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7119,7 +7499,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383135967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -7162,7 +7542,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383135967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -7283,18 +7663,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 481871471}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1438173173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438173171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1438173176
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7316,7 +7684,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438173171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -7373,7 +7741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438173171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -7450,18 +7818,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
   m_PrefabInstance: {fileID: 1098549725}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1468350133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468350131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1468350136
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7483,7 +7839,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468350131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -7505,7 +7861,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 1468350138}
+  constraintsManager: {fileID: 52078572}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -7540,7 +7896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468350131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -7573,7 +7929,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
   m_PrefabInstance: {fileID: 521605541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1490366321
+--- !u!114 &1490366322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7582,9 +7938,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490366319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1490366324
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7628,14 +7986,38 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 52078572}
+  constraintsManager: {fileID: 1490366326}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490366322}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1490366322}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7740,7 +8122,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 763435837405bc24691af77936be360b, type: 3}
   m_PrefabInstance: {fileID: 1184812007}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1554115771
+--- !u!114 &1554115772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7749,9 +8131,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554115769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1554115774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7799,10 +8183,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1554115772}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1554115772}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -7863,18 +8271,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
   m_PrefabInstance: {fileID: 458850258}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1571222889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571222887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1571222892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7896,7 +8292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571222887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -7953,7 +8349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571222887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -7990,6 +8386,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
@@ -8039,6 +8439,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &1582407438 stripped
@@ -8051,7 +8455,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
   m_PrefabInstance: {fileID: 157649359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1616191382
+--- !u!114 &1616191383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8060,9 +8464,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616191381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1616191385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
@@ -8115,10 +8521,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616191383}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616191383}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8267,18 +8697,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 912272285}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1621862837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621862835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1621862840
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8300,7 +8718,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621862835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -8357,7 +8775,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621862835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -8610,7 +9028,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
   m_PrefabInstance: {fileID: 1767244262}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1719017664
+--- !u!114 &1719017665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8619,9 +9037,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719017662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1719017667
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8669,10 +9089,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719017665}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719017665}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -8782,13 +9226,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_TagString
+      value: P
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_RootOrder
       value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.806
+      value: 3.7396228
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8796,7 +9244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.005
+      value: -5.3279686
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8830,6 +9278,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!64 &1729579511 stripped
@@ -8847,7 +9299,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
   m_PrefabInstance: {fileID: 590099606}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1747725441
+--- !u!114 &1747725442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8856,9 +9308,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1747725439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1747725444
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8906,10 +9360,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1747725442}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1747725442}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -9019,6 +9497,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_TagString
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -9066,6 +9548,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
@@ -9133,6 +9619,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -9185,6 +9675,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!64 &1784613848 stripped
@@ -9210,6 +9704,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -9262,6 +9760,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -9642,6 +10144,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_TagString
+      value: N
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -9689,6 +10195,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
@@ -9746,7 +10256,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 1582407437}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1936327389
+--- !u!114 &1936327390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9755,9 +10265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936327388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1936327392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -9810,10 +10322,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936327390}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936327390}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -9869,18 +10405,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
   m_PrefabInstance: {fileID: 1236584006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1973073821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973073820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1973073824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
@@ -9907,7 +10431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973073820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -9964,7 +10488,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973073820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
@@ -10036,7 +10560,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 1729579510}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1985303798
+--- !u!114 &1985303800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10045,9 +10569,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985303797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1985303801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
@@ -10100,10 +10626,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985303800}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985303800}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10236,14 +10786,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022546739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -0.6393, z: -1.12}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08000009, y: -0.6393, z: -1.1200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1833767381}
   - {fileID: 172032665}
+  - {fileID: 1833767381}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2024392591
 PrefabInstance:
@@ -10259,6 +10809,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_TagString
+      value: N
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
       propertyPath: m_RootOrder
@@ -10308,6 +10862,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
 --- !u!64 &2024392592 stripped
@@ -10329,6 +10887,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_TagString
+      value: p
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_RootOrder
@@ -10381,6 +10943,10 @@ PrefabInstance:
     - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
@@ -10487,7 +11053,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
   m_PrefabInstance: {fileID: 827677740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2077135254
+--- !u!114 &2077135255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10496,9 +11062,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077135252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
+  m_Script: {fileID: 11500000, guid: 491e76ceceddc418f95214580ae4df54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldPos: {x: 0, y: 0, z: 0}
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!64 &2077135257
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10546,10 +11114,34 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2077135255}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetOldPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2077135255}
+        m_TargetAssemblyTypeName: MoveValidation, Assembly-CSharp
+        m_MethodName: SetNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -10615,6 +11207,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_TagString
+      value: r
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c61872173bf5220469786c549644854f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -10667,6 +11263,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: c61872173bf5220469786c549644854f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!64 &2090075094 stripped
@@ -10684,18 +11284,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
   m_PrefabInstance: {fileID: 319580869}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2103990809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103990807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0816ca1d9b554da73be1865b8a18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2103990812
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10717,7 +11305,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103990807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 181cd563a8349c34ea8978b0bc8d9c7e, type: 3}
   m_Name: 
@@ -10774,7 +11362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103990807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
   m_Name: 
