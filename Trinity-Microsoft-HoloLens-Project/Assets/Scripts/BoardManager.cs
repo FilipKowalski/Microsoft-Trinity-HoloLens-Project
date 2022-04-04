@@ -28,6 +28,7 @@ public class BoardManager : MonoBehaviour
     private char AIPlayer = 'b';
 
     public string APIurlBest = "https://www.chessdb.cn/cdb.php?action=queryall&board=";
+    Encoding encode;
 
     Dictionary<char, int> ChessPositionToInt = new Dictionary<char, int>();
 
@@ -36,11 +37,10 @@ public class BoardManager : MonoBehaviour
     public const float TILE_OFFSET = 0.76243f;
     public const float TILE_SIZE = 1.52486f;
     private bool collide = true;
-    private bool pieceCollide = false;
 
     public const int CHESSBOARD_SIZE = 8;
-    public static char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
-    public static GameObject[,] gameObjects = new GameObject[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    public char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    public GameObject[,] gameObjects = new GameObject[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
@@ -50,7 +50,7 @@ public class BoardManager : MonoBehaviour
     public GameObject pieceTaken;
     public GameObject empty;
     public List<GameObject> triggers;
-    public GameObject[,] triggers2D;
+    public static GameObject[,] triggers2D;
     public int[] pos;
 
     
@@ -63,6 +63,7 @@ public class BoardManager : MonoBehaviour
         InitialiseArray();
         CreateDictionary();
         PieceCollideToggle();
+        encode = System.Text.Encoding.GetEncoding("utf-8");
     }
 
     public void InitialiseArray()
@@ -166,10 +167,11 @@ public class BoardManager : MonoBehaviour
         ChessPositionToInt.Add('h', 7);
     }
 
-    public void UpdateArray(int oldX, int oldY, int newX, int newY)
+    public void UpdateArray(int oldX, int oldY, int newX, int newY, bool getTaken)
     {
-        Debug.Log("Updating Array");
-        if (chessBoard[newX, newY] != 1)
+        //Debug.Log("Updating Array");
+
+        if (chessBoard[newX, newY] != 1 && getTaken)
             pieceTaken = gameObjects[newX, newY];
 
         chessBoard[newX, newY] = chessBoard[oldX, oldY];
@@ -180,34 +182,62 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    public async void EndTurn()
+    public async void EndTurn(Vector3 oldPos, Vector3 newPos, GameObject piece)
     {
-        Debug.Log("Start End Turn");
+        //Debug.Log("Start End Turn");
+        int oldX = (int)Math.Floor((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5) + 4;
+        int oldY = (int)Math.Floor((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5) + 4;
+        int newX = (int)Math.Floor((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5) + 4;
+        int newY = (int)Math.Floor((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5) + 4;
 
-        string fed = ArrayToForsythEdwards(chessBoard);
+        GameObject oldTrigger = triggers2D[oldX, oldY];
+        GameObject newTrigger = triggers2D[newX, newY];
+
+        if (newX == oldX && newY == oldY)
+        {
+            Debug.Log("no Move");
+            piece.transform.position = oldTrigger.transform.position;
+            piece.transform.rotation = Quaternion.identity;
+            return;
+        }
+
+        piece.transform.position = newTrigger.transform.position;
+        piece.transform.rotation = Quaternion.identity;
+
+        UpdateArray(oldX, oldY, newX, newY, true);
+
+        string test = ArrayToForsythEdwards(chessBoard);
+        Debug.Log(test);
+
         WebRequest request;
         WebResponse response;
-        Stream receiveStream;
-        Encoding encode;
+        Stream receiveStream;        
         StreamReader readStream;
 
-        request = WebRequest.Create(APIurlBest + fed);
+        request = WebRequest.Create(APIurlBest + test);
         request.Method = "GET";
         response = await request.GetResponseAsync();
         receiveStream = response.GetResponseStream();
-        encode = System.Text.Encoding.GetEncoding("utf-8");
+        
         readStream = new StreamReader(receiveStream, encode);
-
+        
         string move = readStream.ReadLine();
-        //Debug.Log(fed);
+        Debug.Log(move);
+        if (String.Equals("unknown", move, StringComparison.InvariantCultureIgnoreCase))
+        {
+            piece.transform.position = oldTrigger.transform.position;
+            piece.transform.rotation = Quaternion.identity;
+            UpdateArray(newX, newY, oldX, oldY, false);
+        }
+        else
+        {
+            int oldAIX = ChessPositionToInt[move[5]];
+            int oldAIY = Convert.ToInt32(new string(move[6], 1)) - 1;
+            int newAIX = ChessPositionToInt[move[7]];
+            int newAIY = Convert.ToInt32(new string(move[8], 1)) - 1;
+            UpdateAndMoveActiveChessPieces(oldAIX, oldAIY, newAIX, newAIY);
+        }
         readStream.Close();
-
-        //Debug.Log(move);
-        int oldX = ChessPositionToInt[move[5]];
-        int oldY = Convert.ToInt32(new string(move[6], 1)) - 1;
-        int newX = ChessPositionToInt[move[7]];
-        int newY = Convert.ToInt32(new string(move[8], 1)) - 1;
-        UpdateAndMoveActiveChessPieces(oldX, oldY, newX, newY);
     }
 
     public void ToggleKinematic()
@@ -226,9 +256,7 @@ public class BoardManager : MonoBehaviour
     {
         foreach (Collider piece1 in ChessColliders)
             foreach (Collider piece2 in ChessColliders)
-                Physics.IgnoreCollision(piece1, piece2, pieceCollide);
-
-        pieceCollide = !pieceCollide;
+                Physics.IgnoreCollision(piece1, piece2, true);
     }
 
     public string ArrayToForsythEdwards(char[,] chessBoard)
@@ -255,7 +283,7 @@ public class BoardManager : MonoBehaviour
         if (chessBoard[7-newX, newY] != '1')
         {
             Destroy(activeChessPieces[((newX * 8) + newY)]);
-            Debug.Log("Help");
+            //Debug.Log("Help");
         }
 
         //move chessPieceInScene
