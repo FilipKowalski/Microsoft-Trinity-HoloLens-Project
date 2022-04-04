@@ -29,7 +29,6 @@ public class BoardManager : MonoBehaviour
 
     public string APIurlBest = "https://www.chessdb.cn/cdb.php?action=queryall&board=";
     Encoding encode;
-
     Dictionary<char, int> ChessPositionToInt = new Dictionary<char, int>();
 
     #endregion FED Notation / API Calls
@@ -287,7 +286,7 @@ public class BoardManager : MonoBehaviour
         }
 
         //move chessPieceInScene
-        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (oldX - newX) * TILE_SIZE);
+        activeChessPieces[((oldX * 8) + oldY)].transform.localPosition += new Vector3((oldY - newY) * TILE_SIZE, 0, (newX - oldX) * TILE_SIZE);
 
         //update the gamestate
         chessBoard[7-newY, newX] = chessBoard[7-oldY, oldX];
