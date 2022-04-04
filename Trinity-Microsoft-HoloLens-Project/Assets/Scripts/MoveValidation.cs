@@ -43,9 +43,12 @@ public class MoveValidation : MonoBehaviour
         GameObject oldTrigger = bm.triggers2D[oldX, oldY];
         GameObject newTrigger = bm.triggers2D[newX, newY];
 
-        bm.UpdateArray(oldPos, newPos);
+        this.transform.localPosition = newTrigger.transform.localPosition;
+        transform.rotation = Quaternion.identity;
 
-        string test = bm.ArrayToForsythEdwards(bm.chessBoard);
+        bm.UpdateArray(oldX, oldY, newX, newY);
+
+        string test = bm.ArrayToForsythEdwards(BoardManager.chessBoard);
         Debug.Log(test);
 
         WebRequest request;
@@ -67,14 +70,11 @@ public class MoveValidation : MonoBehaviour
         {
             this.transform.localPosition = oldTrigger.transform.localPosition;
             this.transform.rotation = Quaternion.identity;
-            bm.chessBoard[oldX, oldY] = bm.chessBoard[newX, newY];
-            bm.chessBoard[newX, newY] = bm.EMPTY_SPACE;
+            BoardManager.chessBoard[oldX, oldY] = BoardManager.chessBoard[newX, newY];
+            BoardManager.chessBoard[newX, newY] = bm.EMPTY_SPACE;
         }
         else
         {
-            this.transform.localPosition = newTrigger.transform.localPosition;
-            this.transform.rotation = Quaternion.identity;
-
             bm.EndTurn();
         }
     }

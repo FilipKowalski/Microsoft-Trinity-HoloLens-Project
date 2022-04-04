@@ -39,8 +39,8 @@ public class BoardManager : MonoBehaviour
     private bool pieceCollide = false;
 
     public const int CHESSBOARD_SIZE = 8;
-    public char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
-    public GameObject[,] gameObjects = new GameObject[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    public static char[,] chessBoard = new char[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
+    public static GameObject[,] gameObjects = new GameObject[CHESSBOARD_SIZE, CHESSBOARD_SIZE];
     public List<GameObject> chessPiecePrefabs;
     public List<GameObject> activeChessPieces;
     public List<Rigidbody> ChessRigidBodies;
@@ -166,14 +166,9 @@ public class BoardManager : MonoBehaviour
         ChessPositionToInt.Add('h', 7);
     }
 
-    public void UpdateArray(Vector3 oldPos, Vector3 newPos)
-    { 
-
-        int oldX = (int)((oldPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int oldY = (int)((oldPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int newX = (int)((newPos.x - TILE_OFFSET) / TILE_SIZE + 0.5);
-        int newY = (int)((newPos.z - TILE_OFFSET) / TILE_SIZE + 0.5);
- 
+    public void UpdateArray(int oldX, int oldY, int newX, int newY)
+    {
+        Debug.Log("Updating Array");
         if (chessBoard[newX, newY] != 1)
             pieceTaken = gameObjects[newX, newY];
 
@@ -268,7 +263,7 @@ public class BoardManager : MonoBehaviour
 
         //update the gamestate
         chessBoard[7-newY, newX] = chessBoard[7-oldY, oldX];
-        chessBoard[7-oldY, oldX] = '1';
+        chessBoard[7-oldY, oldX] = EMPTY_SPACE;
 
         //move chess piece GameObjects in the 1d array
         activeChessPieces[((newX * 8) + newY)] = activeChessPieces[((oldX * 8) + oldY)];
