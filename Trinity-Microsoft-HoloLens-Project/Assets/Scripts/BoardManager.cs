@@ -261,19 +261,36 @@ public class BoardManager : MonoBehaviour
     public string ArrayToForsythEdwards(char[,] chessBoard)
     {
         string FED = "";
+        int countOne = 0;
         //game state to FED
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                FED += chessBoard[i, j];
+                if (chessBoard[i, j] == EMPTY_SPACE)
+                {
+                    while (j < 8 && chessBoard[i, j] == EMPTY_SPACE)
+                    {
+                        countOne++;
+                        j++;
+                    }
+                    sb.Append(countOne);
+                    countOne = 0;
+                }
+
+                if (j < 8 && chessBoard[i, j] != EMPTY_SPACE)
+                {
+                    sb.Append(chessBoard[i, j]);
+                }
             }
             // we dont want the / after the last line
-            if (i < 7) { FED += '/'; }
+            if (i < 7) { sb.Append("/"); }
         }
         //whos turn it is and options Next Chess Move Needs (these dont change)
-        FED += " " + AIPlayer;
-        return FED;
+        sb.Append(" ");
+        sb.Append(AIPlayer);
+        return sb.ToString();
     }
 
     private void UpdateAndMoveActiveChessPieces(int oldX, int oldY, int newX, int newY)
