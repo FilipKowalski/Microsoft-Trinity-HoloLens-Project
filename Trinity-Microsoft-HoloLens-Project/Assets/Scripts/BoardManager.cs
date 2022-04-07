@@ -213,7 +213,8 @@ public class BoardManager : MonoBehaviour
         Stream receiveStream;        
         StreamReader readStream;
 
-        request = WebRequest.Create(APIurlBest + test);
+        request = WebRequest.Create(APIurlBest + test + " KQkq - 0 1" + "&showall=1");
+        Debug.Log(APIurlBest + test + "KQkq - 0 1" + "&showall=1");
         request.Method = "GET";
         response = await request.GetResponseAsync();
         receiveStream = response.GetResponseStream();
