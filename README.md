@@ -6,6 +6,9 @@ To run the game in simulation mode you will need to unity editor installed, simp
 ### Running On Device
 Again to run the game on device you will need to have unity and also visual studio, Build the project in unity first then open the output project in visual studio and build the project making sure to select the release build option rather than than debug. you can then use your HoloLens 2 which should be set to developer mode to load the .appx output file into, you can now locate the game on device and run it.
 # Demo Video
+**The video is heavily compressed as github does not allow large video sizes**
+
+A higher quality version is available [here](https://www.youtube.com/watch?v=s8OlOV_N5xw&ab_channel=FilipKowalski)
 
 https://user-images.githubusercontent.com/55386371/163261306-4b4d7418-97ae-438e-829b-c0011d6ead68.mp4
 
